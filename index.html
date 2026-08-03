@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Profesional | Adi Nugroho</title>
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --secondary-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            display: inline-block;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .skill-card ul {
+            list-style-type: none;
+        }
+
+        .skill-card ul li {
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .skill-card ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Portfolio Projects */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .project-item {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .project-badge {
+            background-color: #e2e8f0;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            align-self: flex-start;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--primary-color);
+            color: #94a3b8;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .project-item { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Adi Nugroho</h1>
+        <p>IT Business Analyst & Data Analytics Professional</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Tentang Saya -->
+        <section id="about">
+            <h2>Tentang Saya</h2>
+            <p>Seorang IT Business Analyst yang berfokus menjembatani kebutuhan bisnis dengan solusi teknis yang efisien. Memiliki ketertarikan kuat dalam analisis data, perancangan model sistem (UML/BPMN), serta penyusunan dokumentasi teknis yang terstruktur untuk mendukung kesuksesan implementasi proyek.</p>
+        </section>
+
+        <!-- Keahlian Teknis -->
+        <section id="skills">
+            <h2>Keahlian Teknis</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Analisis Sistem</h3>
+                    <ul>
+                        <li>Pemodelan Proses Bisnis (BPMN)</li>
+                        <li>Diagram UML (Use Case, Activity)</li>
+                        <li>Manajemen Kebutuhan (BRD / FRD)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Analisis Data</h3>
+                    <ul>
+                        <li>Kueri Data Kompleks (SQL)</li>
+                        <li>Visualisasi Data (Power BI / Looker Studio)</li>
+                        <li>Analisis Tren & Pelaporan Eksploratif</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Metodologi & Alat</h3>
+                    <ul>
+                        <li>Agile / Scrum Framework</li>
+                        <li>Manajemen Backlog & User Stories</li>
+                        <li>Git & Version Control</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyek Terpilih -->
+        <section id="projects">
+            <h2>Proyek & Studi Kasus</h2>
+            <div class="projects-list">
+                
+                <!-- Project 1 -->
+                <div class="project-item">
+                    <span class="project-badge">Data Analytics & SQL</span>
+                    <h3>Dashboard Optimasi Penjualan & Performa Bisnis</h3>
+                    <p>Mengekstraksi data transaksi mentah menggunakan kueri SQL untuk mengidentifikasi metrik kinerja utama. Data yang diolah kemudian ditransformasikan ke dalam dashboard interaktif guna menyajikan wawasan yang mempermudah pengambilan keputusan strategis.</p>
+                    <div class="project-links">
+                        <a href="#">Repositori SQL &rarr;</a>
+                        <a href="#">Dashboard Interaktif &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item">
+                    <span class="project-badge">System Analysis & BPMN</span>
+                    <h3>Redesain Proses Bisnis Sistem Manajemen Inventaris</h3>
+                    <p>Melakukan analisis mendalam terhadap alur kerja operasional konvensional dan memetakan rancangan proses baru (*to-be*) menggunakan diagram BPMN. Menyusun dokumentasi kebutuhan teknis untuk mempermudah fase pengembangan sistem oleh tim teknis.</p>
+                    <div class="project-links">
+                        <a href="#">Dokumentasi Proyek &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Adi Nugroho. Dibuat dengan HTML5 & GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
