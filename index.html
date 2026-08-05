@@ -4,19 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adi Nugroho | Portfolio</title>
+    <title>Adi Nugroho | IT Business Analyst Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         /* ===========================
            GLOBAL & VARIABLES
         =========================== */
         :root {
-            --primary: #0f172a;
+            --primary-blue: #1d4ed8;
             --primary-accent: #2563eb;
-            --bg-light: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #334155;
+            --text-dark: #0f172a;
             --text-muted: #64748b;
-            --border-color: #e2e8f0;
+            --bg-light: #f8fafc;
+            --badge-bg: #eff6ff;
+            --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+            --border-light: #e2e8f0;
         }
 
         * {
@@ -26,180 +34,329 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
 
         section {
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         section h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 24px;
-            color: var(--primary);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 12px;
         }
 
         /* ===========================
-           HERO SECTION
+           HERO SECTION (FROM MOCKUP)
         =========================== */
-        header {
-            background: var(--primary);
-            color: white;
-            padding: 30px 8%;
+        .hero-container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .hero-left {
+            flex: 1.1;
+            padding: 40px 60px 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 2;
         }
 
         .top-nav {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 70px;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
         }
 
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 700;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-        }
-
-        .nav-links a {
-            color: white;
+        .top-nav a {
+            color: var(--text-muted);
             text-decoration: none;
-            transition: .3s;
-        }
-
-        .nav-links a:hover {
-            color: #60a5fa;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: 1.2fr .8fr;
+            display: flex;
             align-items: center;
-            gap: 60px;
-        }
-
-        .hero-left h1 {
-            font-size: 3.4rem;
-            line-height: 1.2;
-            margin: 20px 0;
-        }
-
-        .hero-left h3 {
-            font-size: 1rem;
-            color: #93c5fd;
+            gap: 8px;
             font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            transition: color 0.2s;
         }
 
-        .hero-left p {
+        .top-nav a:hover {
+            color: var(--primary-accent);
+        }
+
+        .top-nav .divider {
             color: #cbd5e1;
-            max-width: 620px;
-            margin-bottom: 30px;
         }
 
-        .hero-right {
-            display: flex;
-            justify-content: center;
+        .hero-body {
+            max-width: 580px;
+            margin: auto 0;
         }
 
-        .photo-frame {
-            width: 340px;
-            height: 430px;
-            border-radius: 24px;
-            background: #334155;
-            display: flex;
-            justify-content: center;
+        .role-badge {
+            display: inline-flex;
             align-items: center;
-            border: 2px dashed rgba(255, 255, 255, .25);
-        }
-
-        .photo-frame span {
-            color: #94a3b8;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-        .skill-tags span {
-            background: #334155;
-            padding: 10px 16px;
+            gap: 8px;
+            background-color: var(--badge-bg);
+            color: var(--primary-accent);
+            padding: 6px 16px;
             border-radius: 999px;
-            font-size: .9rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
         }
 
-        /* Buttons */
-        .btns {
-            margin-top: 35px;
+        .role-badge .dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-accent);
+            border-radius: 50%;
         }
 
-        .btns a {
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .hero-subtitle {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--primary-accent);
+            margin-bottom: 24px;
+            position: relative;
             display: inline-block;
-            margin-right: 12px;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: .3s;
         }
 
-        .btns a.primary {
+        .hero-subtitle::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 48px;
+            height: 4px;
+            background-color: var(--primary-accent);
+            border-radius: 2px;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-top: 24px;
+            margin-bottom: 36px;
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
             background-color: var(--primary-accent);
             color: white;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
         }
 
-        .btns a.primary:hover {
-            background-color: #1d4ed8;
+        .btn-primary:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-2px);
         }
 
-        .btns a.secondary {
-            border: 1px solid rgba(255, 255, 255, 0.3);
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-dark);
+            border: 1.5px solid var(--border-light);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-light);
+            transform: translateY(-2px);
+        }
+
+        .skills-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .skill-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-light);
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .skill-card i {
+            color: var(--primary-accent);
+        }
+
+        .scroll-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 40px;
+        }
+
+        /* HERO RIGHT VISUALS */
+        .hero-right {
+            flex: 1;
+            background-color: #f1f5f9;
+            background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .person-img {
+            max-height: 85vh;
+            width: auto;
+            object-fit: contain;
+            z-index: 2;
+            position: relative;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 20px 24px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            z-index: 3;
+            min-width: 210px;
+        }
+
+        .floating-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .floating-card .card-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
+            font-size: 0.85rem;
         }
 
-        .btns a.secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+        .icon-blue { background-color: var(--primary-accent); }
+        .icon-teal { background-color: #0d9488; }
+        .icon-purple { background-color: #8b5cf6; }
+
+        .floating-card ul { list-style: none; }
+        .floating-card ul li {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
         }
+        .floating-card ul li:last-child { margin-bottom: 0; }
+        .floating-card ul li i { color: var(--primary-accent); font-size: 0.75rem; }
+
+        .card-focus { top: 220px; right: 40px; }
+        .card-experience { bottom: 160px; left: 30px; }
+        .card-exploring { bottom: 60px; right: 60px; }
 
         /* ===========================
-           CARDS & GRID LAYOUT
+           CONTENT SECTIONS & CARDS
         =========================== */
+        #about p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
         }
 
         .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 24px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--card-shadow);
         }
 
         .card h3 {
+            font-size: 1.2rem;
             margin-bottom: 12px;
-            color: var(--primary);
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         .card ul {
@@ -208,147 +365,183 @@
         }
 
         .card ul li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
         }
 
         .timeline {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-        }
-
-        #about p {
-            margin-bottom: 16px;
-        }
-
-        #about p:last-child {
-            margin-bottom: 0;
+            gap: 20px;
         }
 
         small.todo {
-            display: block;
-            margin-top: 12px;
-            color: var(--text-muted);
-            font-style: italic;
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-accent);
+            background-color: var(--badge-bg);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-style: normal;
+            font-weight: 600;
         }
 
         /* ===========================
            FOOTER
         =========================== */
         footer {
-            background-color: var(--primary);
+            background-color: var(--text-dark);
             color: #94a3b8;
             text-align: center;
-            padding: 30px;
-            margin-top: 60px;
+            padding: 40px 20px;
+            margin-top: 80px;
             font-size: 0.9rem;
         }
 
-        /* ===========================
-           MEDIA QUERIES (RESPONSIVE)
-        =========================== */
-        @media(max-width: 900px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
+        footer p { margin-bottom: 6px; }
 
-            .top-nav {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .hero-left p {
-                margin: 0 auto 30px auto;
-            }
-
-            .hero-right {
-                margin-top: 40px;
-            }
-
-            .skill-tags {
-                justify-content: center;
-            }
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1024px) {
+            .hero-container { flex-direction: column; }
+            .hero-left { padding: 40px 30px; }
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 2.2rem; }
+            .hero-right { min-height: 500px; }
+            .floating-card { position: relative; top: auto; left: auto; right: auto; bottom: auto; margin: 10px; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HERO HEADER -->
-    <header>
-        <div class="top-nav">
-            <div class="logo">
-                Adi Nugroho
+    <!-- HERO HEADER (DESAIN MOCKUP) -->
+    <div class="hero-container">
+
+        <div class="hero-left">
+            <!-- Navigasi Kontak -->
+            <div class="top-nav">
+                <a href="mailto:adinugroho.dev@gmail.com">
+                    <i class="fa-regular fa-envelope"></i> adinugroho.dev@gmail.com
+                </a>
+                <span class="divider">|</span>
+                <a href="#" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <span class="divider">|</span>
+                <a href="#" target="_blank">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
             </div>
 
-            <div class="nav-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-                <a href="#">Contact</a>
-            </div>
-        </div>
+            <!-- Teks Utama Hero -->
+            <div class="hero-body">
+                <div class="role-badge">
+                    <span class="dot"></span> IT BUSINESS ANALYST
+                </div>
 
-        <div class="hero">
-            <div class="hero-left">
-                <h3>IT Business Analyst</h3>
+                <h1 class="hero-title">Adi Nugroho</h1>
+                <h2 class="hero-subtitle">IT Business Analyst</h2>
 
-                <h1>Transforming Business Needs Into Digital Solutions</h1>
-
-                <p>
-                    Experienced in mobile applications, web-based systems,
-                    enterprise solutions, and business process analysis.
-                    Passionate about translating business requirements into
-                    structured technical solutions while continuously expanding
-                    my skills in SQL and Data Analytics.
+                <p class="hero-description">
+                    Transforming business needs into scalable digital solutions through structured analysis and data-driven insights. Experienced in mobile applications, web-based systems, and enterprise solutions.
                 </p>
 
-                <div class="btns">
-                    <a class="primary" href="#">Download CV</a>
-                    <a class="secondary" href="#projects">View Projects</a>
+                <!-- Tombol Action -->
+                <div class="action-btns">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fa-solid fa-download"></i> View Resume
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <i class="fa-regular fa-folder-open"></i> Explore Projects
+                    </a>
                 </div>
 
-                <div class="skill-tags">
-                    <span>📱 Mobile Apps</span>
-                    <span>🌐 Web Systems</span>
-                    <span>📊 SQL</span>
-                    <span>⚙ Agile</span>
+                <!-- Skill Badges -->
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fa-solid fa-mobile-screen"></i> Mobile Apps
+                    </div>
+                    <div class="skill-card">
+                        <i class="fa-solid fa-city"></i> Enterprise Systems
+                    </div>
+                    <div class="skill-card">
+                        <i class="fa-solid fa-database"></i> SQL
+                    </div>
+                    <div class="skill-card">
+                        <i class="fa-solid fa-arrows-spin"></i> Agile
+                    </div>
+                    <div class="skill-card">
+                        <i class="fa-solid fa-chart-line"></i> Data Analysis
+                    </div>
                 </div>
             </div>
 
-            <div class="hero-right">
-                <div class="photo-frame">
-                    <span>Your Photo</span>
-                </div>
+            <div class="scroll-indicator">
+                <i class="fa-solid fa-chevron-down"></i> Scroll to explore
             </div>
         </div>
-    </header>
 
-    <!-- MAIN CONTENT CONTAINER -->
+        <!-- Bagian Visual Foto & Floating Cards -->
+        <div class="hero-right">
+            <!-- Ganti URL src di bawah ini dengan foto PNG transparan Anda -->
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" alt="Adi Nugroho" class="person-img">
+
+            <div class="floating-card card-focus">
+                <div class="card-header">
+                    <div class="card-icon icon-blue"><i class="fa-solid fa-bullseye"></i></div>
+                    My Focus
+                </div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Business Analysis</li>
+                    <li><i class="fa-solid fa-check"></i> System Design</li>
+                    <li><i class="fa-solid fa-check"></i> Stakeholder Collaboration</li>
+                    <li><i class="fa-solid fa-check"></i> Data-Driven Decision</li>
+                </ul>
+            </div>
+
+            <div class="floating-card card-experience">
+                <div class="card-header">
+                    <div class="card-icon icon-teal"><i class="fa-solid fa-briefcase"></i></div>
+                    Experience
+                </div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Mobile Applications</li>
+                    <li><i class="fa-solid fa-check"></i> Web Applications</li>
+                    <li><i class="fa-solid fa-check"></i> Enterprise Systems</li>
+                    <li><i class="fa-solid fa-check"></i> Cross-functional Teams</li>
+                </ul>
+            </div>
+
+            <div class="floating-card card-exploring">
+                <div class="card-header">
+                    <div class="card-icon icon-purple"><i class="fa-solid fa-chart-simple"></i></div>
+                    Currently Exploring
+                </div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Advanced SQL</li>
+                    <li><i class="fa-solid fa-check"></i> Data Analytics</li>
+                    <li><i class="fa-solid fa-check"></i> Business Intelligence</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER (GABUNGAN KODE LAMA ANDA) -->
     <div class="container">
 
         <!-- About Section -->
         <section id="about">
             <h2>About Me</h2>
-
             <p>
-                I am an IT Business Analyst with experience in mobile applications,
-                web-based systems, and enterprise solutions. Throughout my career,
-                I have collaborated with stakeholders and cross-functional teams to
-                transform business needs into clear, actionable technical requirements
-                that support successful software delivery.
+                I am an IT Business Analyst with experience in mobile applications, web-based systems, and enterprise solutions. Throughout my career, I have collaborated with stakeholders and cross-functional teams to transform business needs into clear, actionable technical requirements that support successful software delivery.
             </p>
             <p>
-                My experience includes business process analysis, requirement gathering,
-                system documentation, API analysis, SQL-based data validation, and
-                solution design. I enjoy simplifying complex business processes into
-                structured workflows that help teams build scalable and maintainable
-                solutions.
+                My experience includes business process analysis, requirement gathering, system documentation, API analysis, SQL-based data validation, and solution design. I enjoy simplifying complex business processes into structured workflows that help teams build scalable and maintainable solutions.
             </p>
             <p>
-                This portfolio showcases selected projects, case studies, and technical
-                documentation that reflect my experience, problem-solving approach,
-                and continuous learning journey.
+                This portfolio showcases selected projects, case studies, and technical documentation that reflect my experience, problem-solving approach, and continuous learning journey.
             </p>
         </section>
 
