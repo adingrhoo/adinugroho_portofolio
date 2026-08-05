@@ -4,27 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adi Nugroho | IT Business Analyst Portfolio</title>
-    <!-- Google Fonts -->
+    <title>Adi Nugroho - IT Business Analyst</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* ===========================
-           GLOBAL & VARIABLES
+           RESET & VARIABLE SAMA PERSIS MOCKUP
         =========================== */
         :root {
-            --primary-blue: #1d4ed8;
-            --primary-accent: #2563eb;
+            --primary-blue: #2563eb;
+            --hover-blue: #1d4ed8;
             --text-dark: #0f172a;
-            --text-muted: #64748b;
+            --text-muted: #475569;
             --bg-light: #f8fafc;
             --badge-bg: #eff6ff;
-            --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
-            --border-light: #e2e8f0;
+            --border-color: #e2e8f0;
+            --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
         }
 
         * {
@@ -37,77 +37,55 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #ffffff;
             color: var(--text-dark);
-            line-height: 1.6;
+            min-height: 100vh;
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        section {
-            margin-bottom: 70px;
-        }
-
-        section h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: var(--text-dark);
-            border-bottom: 2px solid var(--border-light);
-            padding-bottom: 12px;
-        }
-
-        /* ===========================
-           HERO SECTION (FROM MOCKUP)
-        =========================== */
-        .hero-container {
+        /* LAYOUT HERO UTAMA */
+        .hero-section {
             display: flex;
             min-height: 100vh;
             width: 100%;
-            position: relative;
-            border-bottom: 1px solid var(--border-light);
         }
 
+        /* SISI KIRI (CONTENT) */
         .hero-left {
             flex: 1.1;
-            padding: 40px 60px 60px 80px;
+            padding: 40px 60px 40px 80px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            z-index: 2;
         }
 
+        /* 1. Header / Top Nav */
         .top-nav {
             display: flex;
             align-items: center;
             gap: 20px;
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 40px;
+            font-weight: 500;
         }
 
         .top-nav a {
-            color: var(--text-muted);
+            color: var(--text-dark);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 8px;
-            font-weight: 500;
             transition: color 0.2s;
         }
 
         .top-nav a:hover {
-            color: var(--primary-accent);
+            color: var(--primary-blue);
         }
 
         .top-nav .divider {
             color: #cbd5e1;
         }
 
-        .hero-body {
+        /* 2. Content Center */
+        .hero-content {
             max-width: 580px;
             margin: auto 0;
         }
@@ -117,61 +95,63 @@
             align-items: center;
             gap: 8px;
             background-color: var(--badge-bg);
-            color: var(--primary-accent);
-            padding: 6px 16px;
+            color: var(--primary-blue);
+            padding: 8px 16px;
             border-radius: 999px;
             font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.8px;
             margin-bottom: 24px;
         }
 
         .role-badge .dot {
             width: 8px;
             height: 8px;
-            background-color: var(--primary-accent);
+            background-color: var(--primary-blue);
             border-radius: 50%;
         }
 
-        .hero-title {
-            font-size: 3.8rem;
+        .main-title {
+            font-size: 4rem;
             font-weight: 800;
             line-height: 1.1;
             color: var(--text-dark);
-            margin-bottom: 8px;
+            letter-spacing: -1px;
+            margin-bottom: 4px;
         }
 
-        .hero-subtitle {
-            font-size: 2.8rem;
+        .sub-title {
+            font-size: 3rem;
             font-weight: 800;
-            line-height: 1.2;
-            color: var(--primary-accent);
+            color: var(--primary-blue);
             margin-bottom: 24px;
             position: relative;
             display: inline-block;
         }
 
-        .hero-subtitle::after {
+        /* Garis Aksen Biru di Bawah Sub-title */
+        .sub-title::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -8px;
+            bottom: -10px;
             width: 48px;
             height: 4px;
-            background-color: var(--primary-accent);
+            background-color: var(--primary-blue);
             border-radius: 2px;
         }
 
-        .hero-description {
-            font-size: 1.05rem;
+        .description {
+            font-size: 1.15rem;
             color: var(--text-muted);
             line-height: 1.6;
-            margin-top: 24px;
+            margin-top: 28px;
             margin-bottom: 36px;
+            font-weight: 500;
         }
 
-        .action-btns {
+        /* Tombol / Buttons */
+        .cta-buttons {
             display: flex;
             gap: 16px;
             margin-bottom: 48px;
@@ -181,30 +161,31 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 14px 28px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
             cursor: pointer;
         }
 
         .btn-primary {
-            background-color: var(--primary-accent);
+            background-color: var(--primary-blue);
             color: white;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            border: none;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-blue);
+            background-color: var(--hover-blue);
             transform: translateY(-2px);
         }
 
         .btn-secondary {
             background-color: white;
             color: var(--text-dark);
-            border: 1.5px solid var(--border-light);
+            border: 1.5px solid var(--border-color);
         }
 
         .btn-secondary:hover {
@@ -212,44 +193,47 @@
             transform: translateY(-2px);
         }
 
-        .skills-grid {
+        /* Skill Badges di Kiri Bawah */
+        .skills-list {
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
         }
 
-        .skill-card {
+        .skill-item {
             display: flex;
             align-items: center;
             gap: 10px;
             background-color: var(--bg-light);
-            border: 1px solid var(--border-light);
-            padding: 10px 16px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
             color: var(--text-dark);
         }
 
-        .skill-card i {
-            color: var(--primary-accent);
+        .skill-item i {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
         }
 
-        .scroll-indicator {
+        /* Scroll Indicator */
+        .scroll-down {
             display: flex;
             align-items: center;
             gap: 8px;
             color: var(--text-muted);
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-top: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
-        /* HERO RIGHT VISUALS */
+        /* SISI KANAN (VISUAL & FLOATING CARDS) */
         .hero-right {
             flex: 1;
             background-color: #f1f5f9;
-            background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
+            /* Pattern Titik-titik Persis Mockup */
+            background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
             background-size: 24px 24px;
             position: relative;
             display: flex;
@@ -258,7 +242,31 @@
             overflow: hidden;
         }
 
-        .person-img {
+        /* Diagram Vektor Latar Belakang Kanan */
+        .bg-vector {
+            position: absolute;
+            border: 1.5px solid #cbd5e1;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 12px;
+            padding: 12px;
+            color: #94a3b8;
+        }
+
+        .vec-dashboard { top: 60px; left: 50px; width: 140px; }
+        .vec-process { top: 120px; right: 80px; width: 150px; }
+        .vec-mobile { top: 320px; left: 40px; width: 100px; }
+        .vec-api { bottom: 120px; right: 60px; width: 90px; }
+
+        .vec-title {
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        /* Foto Karakter Utama */
+        .character-img {
             max-height: 85vh;
             width: auto;
             object-fit: contain;
@@ -266,31 +274,32 @@
             position: relative;
         }
 
+        /* Floating Cards Persis Mockup */
         .floating-card {
             position: absolute;
-            background: white;
+            background: #ffffff;
             padding: 20px 24px;
             border-radius: 16px;
             box-shadow: var(--card-shadow);
             border: 1px solid rgba(255, 255, 255, 0.8);
             z-index: 3;
-            min-width: 210px;
+            min-width: 220px;
         }
 
-        .floating-card .card-header {
+        .card-title-box {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-weight: 700;
-            font-size: 0.9rem;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-weight: 800;
+            font-size: 0.95rem;
             color: var(--text-dark);
         }
 
-        .floating-card .card-icon {
+        .card-icon {
             width: 32px;
             height: 32px;
-            border-radius: 8px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -298,128 +307,69 @@
             font-size: 0.85rem;
         }
 
-        .icon-blue { background-color: var(--primary-accent); }
+        .icon-blue { background-color: #2563eb; }
         .icon-teal { background-color: #0d9488; }
         .icon-purple { background-color: #8b5cf6; }
 
-        .floating-card ul { list-style: none; }
+        .floating-card ul {
+            list-style: none;
+        }
+
         .floating-card ul li {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-weight: 500;
-        }
-        .floating-card ul li:last-child { margin-bottom: 0; }
-        .floating-card ul li i { color: var(--primary-accent); font-size: 0.75rem; }
-
-        .card-focus { top: 220px; right: 40px; }
-        .card-experience { bottom: 160px; left: 30px; }
-        .card-exploring { bottom: 60px; right: 60px; }
-
-        /* ===========================
-           CONTENT SECTIONS & CARDS
-        =========================== */
-        #about p {
-            color: var(--text-muted);
-            margin-bottom: 16px;
-            font-size: 1.05rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 28px;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--card-shadow);
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            color: var(--text-muted);
-        }
-
-        .card ul li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        small.todo {
-            display: inline-block;
-            margin-top: 10px;
-            color: var(--primary-accent);
-            background-color: var(--badge-bg);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-style: normal;
+            gap: 10px;
             font-weight: 600;
         }
 
-        /* ===========================
-           FOOTER
-        =========================== */
-        footer {
-            background-color: var(--text-dark);
-            color: #94a3b8;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
-            font-size: 0.9rem;
+        .floating-card ul li:last-child {
+            margin-bottom: 0;
         }
 
-        footer p { margin-bottom: 6px; }
+        .floating-card ul li i {
+            color: var(--primary-blue);
+            font-size: 0.8rem;
+        }
 
-        /* RESPONSIVE DESIGN */
+        /* Posisi Kartu Melayang Sesuai Mockup */
+        .card-focus {
+            top: 260px;
+            right: 50px;
+        }
+
+        .card-experience {
+            bottom: 180px;
+            left: 40px;
+        }
+
+        .card-exploring {
+            bottom: 80px;
+            right: 70px;
+        }
+
+        /* Responsive Mobile Layout */
         @media (max-width: 1024px) {
-            .hero-container { flex-direction: column; }
-            .hero-left { padding: 40px 30px; }
-            .hero-title { font-size: 3rem; }
-            .hero-subtitle { font-size: 2.2rem; }
-            .hero-right { min-height: 500px; }
-            .floating-card { position: relative; top: auto; left: auto; right: auto; bottom: auto; margin: 10px; }
+            .hero-section { flex-direction: column; }
+            .hero-left { padding: 40px 24px; }
+            .main-title { font-size: 3rem; }
+            .sub-title { font-size: 2.2rem; }
+            .hero-right { min-height: 550px; }
+            .floating-card { position: relative; top: auto; bottom: auto; left: auto; right: auto; margin: 10px; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HERO HEADER (DESAIN MOCKUP) -->
-    <div class="hero-container">
+    <section class="hero-section">
 
+        <!-- ================= SISI KIRI ================= -->
         <div class="hero-left">
-            <!-- Navigasi Kontak -->
+
+            <!-- Navigasi Kontak Atas -->
             <div class="top-nav">
                 <a href="mailto:adinugroho.dev@gmail.com">
                     <i class="fa-regular fa-envelope"></i> adinugroho.dev@gmail.com
@@ -434,62 +384,90 @@
                 </a>
             </div>
 
-            <!-- Teks Utama Hero -->
-            <div class="hero-body">
+            <!-- Isi Konten Utama -->
+            <div class="hero-content">
                 <div class="role-badge">
                     <span class="dot"></span> IT BUSINESS ANALYST
                 </div>
 
-                <h1 class="hero-title">Adi Nugroho</h1>
-                <h2 class="hero-subtitle">IT Business Analyst</h2>
+                <h1 class="main-title">Adi Nugroho</h1>
+                <div class="sub-title">IT Business Analyst</div>
 
-                <p class="hero-description">
-                    Transforming business needs into scalable digital solutions through structured analysis and data-driven insights. Experienced in mobile applications, web-based systems, and enterprise solutions.
+                <p class="description">
+                    Transforming business needs into scalable digital solutions through structured analysis and data-driven insights.
                 </p>
 
-                <!-- Tombol Action -->
-                <div class="action-btns">
+                <!-- Tombol CTA -->
+                <div class="cta-buttons">
                     <a href="#" class="btn btn-primary">
                         <i class="fa-solid fa-download"></i> View Resume
                     </a>
-                    <a href="#projects" class="btn btn-secondary">
+                    <a href="#" class="btn btn-secondary">
                         <i class="fa-regular fa-folder-open"></i> Explore Projects
                     </a>
                 </div>
 
-                <!-- Skill Badges -->
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fa-solid fa-mobile-screen"></i> Mobile Apps
+                <!-- Skill List -->
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <i class="fa-solid fa-mobile-screen-button"></i> Mobile Apps
                     </div>
-                    <div class="skill-card">
-                        <i class="fa-solid fa-city"></i> Enterprise Systems
+                    <div class="skill-item">
+                        <i class="fa-solid fa-building"></i> Enterprise Systems
                     </div>
-                    <div class="skill-card">
+                    <div class="skill-item">
                         <i class="fa-solid fa-database"></i> SQL
                     </div>
-                    <div class="skill-card">
+                    <div class="skill-item">
                         <i class="fa-solid fa-arrows-spin"></i> Agile
                     </div>
-                    <div class="skill-card">
-                        <i class="fa-solid fa-chart-line"></i> Data Analysis
+                    <div class="skill-item">
+                        <i class="fa-solid fa-chart-simple"></i> Data Analysis
                     </div>
                 </div>
             </div>
 
-            <div class="scroll-indicator">
+            <!-- Indicator Scroll -->
+            <div class="scroll-down">
                 <i class="fa-solid fa-chevron-down"></i> Scroll to explore
             </div>
+
         </div>
 
-        <!-- Bagian Visual Foto & Floating Cards -->
+        <!-- ================= SISI KANAN ================= -->
         <div class="hero-right">
-            <!-- Ganti URL src di bawah ini dengan foto PNG transparan Anda -->
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" alt="Adi Nugroho" class="person-img">
 
+            <!-- Visual Diagram Latar Belakang -->
+            <div class="bg-vector vec-dashboard">
+                <div class="vec-title">DASHBOARD</div>
+                <i class="fa-solid fa-chart-pie" style="font-size: 1.8rem;"></i>
+            </div>
+
+            <div class="bg-vector vec-process">
+                <div class="vec-title">BUSINESS PROCESS</div>
+                <i class="fa-solid fa-diagram-project" style="font-size: 1.8rem;"></i>
+            </div>
+
+            <div class="bg-vector vec-mobile">
+                <div class="vec-title">MOBILE APP</div>
+                <i class="fa-solid fa-mobile-screen" style="font-size: 1.5rem;"></i>
+            </div>
+
+            <div class="bg-vector vec-api">
+                <div class="vec-title">API</div>
+                <code style="font-size: 0.8rem; font-weight: bold;">{ ... }</code>
+            </div>
+
+            <!-- Foto Utama Subjek -->
+            <!-- Catatan: Ganti src di bawah ini dengan foto PNG tanpa background milik Anda -->
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" alt="Adi Nugroho" class="character-img">
+
+            <!-- 1. Floating Card: My Focus -->
             <div class="floating-card card-focus">
-                <div class="card-header">
-                    <div class="card-icon icon-blue"><i class="fa-solid fa-bullseye"></i></div>
+                <div class="card-title-box">
+                    <div class="card-icon icon-blue">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
                     My Focus
                 </div>
                 <ul>
@@ -500,9 +478,12 @@
                 </ul>
             </div>
 
+            <!-- 2. Floating Card: Experience -->
             <div class="floating-card card-experience">
-                <div class="card-header">
-                    <div class="card-icon icon-teal"><i class="fa-solid fa-briefcase"></i></div>
+                <div class="card-title-box">
+                    <div class="card-icon icon-teal">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
                     Experience
                 </div>
                 <ul>
@@ -513,9 +494,12 @@
                 </ul>
             </div>
 
+            <!-- 3. Floating Card: Currently Exploring -->
             <div class="floating-card card-exploring">
-                <div class="card-header">
-                    <div class="card-icon icon-purple"><i class="fa-solid fa-chart-simple"></i></div>
+                <div class="card-title-box">
+                    <div class="card-icon icon-purple">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
                     Currently Exploring
                 </div>
                 <ul>
@@ -524,141 +508,10 @@
                     <li><i class="fa-solid fa-check"></i> Business Intelligence</li>
                 </ul>
             </div>
+
         </div>
 
-    </div>
-
-    <!-- MAIN CONTENT CONTAINER (GABUNGAN KODE LAMA ANDA) -->
-    <div class="container">
-
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am an IT Business Analyst with experience in mobile applications, web-based systems, and enterprise solutions. Throughout my career, I have collaborated with stakeholders and cross-functional teams to transform business needs into clear, actionable technical requirements that support successful software delivery.
-            </p>
-            <p>
-                My experience includes business process analysis, requirement gathering, system documentation, API analysis, SQL-based data validation, and solution design. I enjoy simplifying complex business processes into structured workflows that help teams build scalable and maintainable solutions.
-            </p>
-            <p>
-                This portfolio showcases selected projects, case studies, and technical documentation that reflect my experience, problem-solving approach, and continuous learning journey.
-            </p>
-        </section>
-
-        <!-- Core Expertise Section -->
-        <section>
-            <h2>Core Expertise</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Business Analysis</h3>
-                    <ul>
-                        <li>Requirement Gathering</li>
-                        <li>Business Process Analysis</li>
-                        <li>User Story</li>
-                        <li>Gap Analysis</li>
-                        <li>Stakeholder Communication</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Documentation</h3>
-                    <ul>
-                        <li>BRD / FSD</li>
-                        <li>Flowchart</li>
-                        <li>Use Case</li>
-                        <li>Activity Diagram</li>
-                        <li>Business Rules</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Technical</h3>
-                    <ul>
-                        <li>SQL</li>
-                        <li>Postman</li>
-                        <li>Jira</li>
-                        <li>Confluence</li>
-                        <li>Git & GitHub</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Professional Experience Section -->
-        <section>
-            <h2>Professional Experience</h2>
-            <div class="timeline">
-                <div class="card">
-                    <h3>PT Pegadaian</h3>
-                    <p>Business Analyst</p>
-                    <small class="todo">TODO: Add achievements, responsibilities, timeline.</small>
-                </div>
-                <div class="card">
-                    <h3>Bank Danamon Indonesia</h3>
-                    <p>Technical Business Analyst</p>
-                    <small class="todo">TODO: Add achievements, responsibilities, timeline.</small>
-                </div>
-                <div class="card">
-                    <h3>Freelance Projects</h3>
-                    <p>HRIS & Digital Solutions</p>
-                    <small class="todo">TODO: Add project summaries.</small>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Projects Section -->
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Disaster Reporting System</h3>
-                    <p>Business analysis, workflow improvement and documentation.</p>
-                </div>
-                <div class="card">
-                    <h3>HRIS</h3>
-                    <p>Requirement gathering, payroll and leave management modules.</p>
-                </div>
-                <div class="card">
-                    <h3>POS Application</h3>
-                    <p>Business flow, database design and admin dashboard.</p>
-                </div>
-                <div class="card">
-                    <h3>Employee Management</h3>
-                    <p>Role-based employee management solution.</p>
-                </div>
-            </div>
-            <small class="todo">TODO: Each project will later have its own detail page (case study).</small>
-        </section>
-
-        <!-- Learning Journey Section -->
-        <section>
-            <h2>Learning Journey</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Currently Exploring</h3>
-                    <ul>
-                        <li>React</li>
-                        <li>Playwright</li>
-                        <li>Python</li>
-                        <li>AI Productivity</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section>
-            <h2>Contact</h2>
-            <p>Email : your-email@example.com</p>
-            <p>LinkedIn : TODO</p>
-            <p>GitHub : TODO</p>
-        </section>
-
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>Designed & Built by Adi Nugroho</p>
-        <p>Portfolio Foundation v1.0</p>
-    </footer>
+    </section>
 
 </body>
 
