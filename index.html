@@ -9,12 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome untuk Ikon -->
+    <!-- Font Awesome Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* ===========================
-           RESET & VARIABLE SAMA PERSIS MOCKUP
+           RESET & GLOBAL VARIABLES
         =========================== */
         :root {
             --primary-blue: #2563eb;
@@ -37,20 +37,19 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #ffffff;
             color: var(--text-dark);
-            min-height: 100vh;
-            overflow-x: hidden;
-            line-height: 1.6;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden; /* Tidak ada scrollbar */
         }
 
-        /* LAYOUT HERO UTAMA */
+        /* LAYOUT HERO 1 LAYAR PENUH */
         .hero-section {
             display: flex;
-            min-height: 100vh;
+            height: 100vh;
             width: 100%;
-            border-bottom: 1px solid var(--border-color);
         }
 
-        /* SISI KIRI (CONTENT) */
+        /* SISI KIRI (KONTEN) */
         .hero-left {
             flex: 1.1;
             padding: 40px 60px 40px 80px;
@@ -59,7 +58,7 @@
             justify-content: space-between;
         }
 
-        /* 1. Header / Top Nav */
+        /* Top Navigasi */
         .top-nav {
             display: flex;
             align-items: center;
@@ -86,7 +85,7 @@
             color: #cbd5e1;
         }
 
-        /* 2. Content Center */
+        /* Tengah / Text Main */
         .hero-content {
             max-width: 580px;
             margin: auto 0;
@@ -114,7 +113,7 @@
         }
 
         .main-title {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.1;
             color: var(--text-dark);
@@ -123,7 +122,7 @@
         }
 
         .sub-title {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: var(--primary-blue);
             margin-bottom: 24px;
@@ -131,7 +130,6 @@
             display: inline-block;
         }
 
-        /* Garis Aksen Biru di Bawah Sub-title */
         .sub-title::after {
             content: '';
             position: absolute;
@@ -144,7 +142,7 @@
         }
 
         .description {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             line-height: 1.6;
             margin-top: 28px;
@@ -152,7 +150,6 @@
             font-weight: 500;
         }
 
-        /* Tombol / Buttons */
         .cta-buttons {
             display: flex;
             gap: 16px;
@@ -195,7 +192,6 @@
             transform: translateY(-2px);
         }
 
-        /* Skill Badges di Kiri Bawah */
         .skills-list {
             display: flex;
             gap: 12px;
@@ -220,7 +216,6 @@
             font-size: 1.1rem;
         }
 
-        /* Scroll Indicator */
         .scroll-down {
             display: flex;
             align-items: center;
@@ -234,7 +229,6 @@
         .hero-right {
             flex: 1;
             background-color: #f1f5f9;
-            /* Pattern Titik-titik Persis Mockup */
             background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
             background-size: 24px 24px;
             position: relative;
@@ -244,7 +238,6 @@
             overflow: hidden;
         }
 
-        /* Diagram Vektor Latar Belakang Kanan */
         .bg-vector {
             position: absolute;
             border: 1.5px solid #cbd5e1;
@@ -267,7 +260,6 @@
             margin-bottom: 6px;
         }
 
-        /* Foto Karakter Utama */
         .character-img {
             max-height: 85vh;
             width: auto;
@@ -276,7 +268,6 @@
             position: relative;
         }
 
-        /* Floating Cards Persis Mockup */
         .floating-card {
             position: absolute;
             background: #ffffff;
@@ -336,128 +327,14 @@
             font-size: 0.8rem;
         }
 
-        /* Posisi Kartu Melayang Sesuai Mockup */
-        .card-focus {
-            top: 260px;
-            right: 50px;
-        }
-
-        .card-experience {
-            bottom: 180px;
-            left: 40px;
-        }
-
-        .card-exploring {
-            bottom: 80px;
-            right: 70px;
-        }
-
-        /* ===========================
-           CONTENT SECTIONS & CARDS (BAGIAN BAWAH)
-        =========================== */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        section {
-            margin-bottom: 70px;
-        }
-
-        section h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: var(--text-dark);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 12px;
-        }
-
-        #about p {
-            color: var(--text-muted);
-            margin-bottom: 16px;
-            font-size: 1.05rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 28px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--card-shadow);
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            color: var(--text-muted);
-        }
-
-        .card ul li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        small.todo {
-            display: inline-block;
-            margin-top: 10px;
-            color: var(--primary-blue);
-            background-color: var(--badge-bg);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-style: normal;
-            font-weight: 600;
-        }
-
-        /* ===========================
-           FOOTER
-        =========================== */
-        footer {
-            background-color: var(--text-dark);
-            color: #94a3b8;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin-bottom: 6px;
-        }
+        .card-focus { top: 220px; right: 40px; }
+        .card-experience { bottom: 160px; left: 30px; }
+        .card-exploring { bottom: 60px; right: 50px; }
 
         /* Responsive Mobile Layout */
         @media (max-width: 1024px) {
-            .hero-section { flex-direction: column; }
+            body { overflow-y: auto; height: auto; }
+            .hero-section { flex-direction: column; height: auto; }
             .hero-left { padding: 40px 24px; }
             .main-title { font-size: 3rem; }
             .sub-title { font-size: 2.2rem; }
@@ -469,13 +346,11 @@
 
 <body>
 
-    <!-- HERO SECTION (TAMPILAN UTAMA KANAN & KIRI) -->
     <section class="hero-section">
 
         <!-- SISI KIRI -->
         <div class="hero-left">
 
-            <!-- Navigasi Kontak Atas -->
             <div class="top-nav">
                 <a href="mailto:adinugroho.dev@gmail.com">
                     <i class="fa-regular fa-envelope"></i> adinugroho.dev@gmail.com
@@ -490,7 +365,6 @@
                 </a>
             </div>
 
-            <!-- Isi Konten Utama -->
             <div class="hero-content">
                 <div class="role-badge">
                     <span class="dot"></span> IT BUSINESS ANALYST
@@ -503,17 +377,15 @@
                     Transforming business needs into scalable digital solutions through structured analysis and data-driven insights.
                 </p>
 
-                <!-- Tombol CTA -->
                 <div class="cta-buttons">
                     <a href="#" class="btn btn-primary">
                         <i class="fa-solid fa-download"></i> View Resume
                     </a>
-                    <a href="#projects" class="btn btn-secondary">
+                    <a href="#" class="btn btn-secondary">
                         <i class="fa-regular fa-folder-open"></i> Explore Projects
                     </a>
                 </div>
 
-                <!-- Skill List -->
                 <div class="skills-list">
                     <div class="skill-item">
                         <i class="fa-solid fa-mobile-screen-button"></i> Mobile Apps
@@ -533,7 +405,6 @@
                 </div>
             </div>
 
-            <!-- Indicator Scroll -->
             <div class="scroll-down">
                 <i class="fa-solid fa-chevron-down"></i> Scroll to explore
             </div>
@@ -543,7 +414,6 @@
         <!-- SISI KANAN -->
         <div class="hero-right">
 
-            <!-- Visual Diagram Latar Belakang -->
             <div class="bg-vector vec-dashboard">
                 <div class="vec-title">DASHBOARD</div>
                 <i class="fa-solid fa-chart-pie" style="font-size: 1.8rem;"></i>
@@ -561,14 +431,13 @@
 
             <div class="bg-vector vec-api">
                 <div class="vec-title">API</div>
-                <code style="font-size: 0.8rem; font-weight: bold;">{ ... }</code>
+                <code style="font-size: 0.8rem; font-weight: bold;">&#123; ... &#125;</code>
             </div>
 
-            <!-- Tag Foto Utama Subjek -->
-            <!-- TERHUBUNG KE FILE: INI.png -->
+            <!-- FOTO PROFIL -->
+            <!-- Pastikan nama file foto di repositori GitHub persis: INI.png (perhatikan huruf besar/kecilnya) -->
             <img src="INI.png" alt="Adi Nugroho" class="character-img">
 
-            <!-- 1. Floating Card: My Focus -->
             <div class="floating-card card-focus">
                 <div class="card-title-box">
                     <div class="card-icon icon-blue">
@@ -584,7 +453,6 @@
                 </ul>
             </div>
 
-            <!-- 2. Floating Card: Experience -->
             <div class="floating-card card-experience">
                 <div class="card-title-box">
                     <div class="card-icon icon-teal">
@@ -600,7 +468,6 @@
                 </ul>
             </div>
 
-            <!-- 3. Floating Card: Currently Exploring -->
             <div class="floating-card card-exploring">
                 <div class="card-title-box">
                     <div class="card-icon icon-purple">
@@ -618,138 +485,6 @@
         </div>
 
     </section>
-
-    <!-- CONTAINER KONTEN PORTOFOLIO LENGKAP (BAGIAN BAWAH) -->
-    <div class="container">
-
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am an IT Business Analyst with experience in mobile applications, web-based systems, and enterprise solutions. Throughout my career, I have collaborated with stakeholders and cross-functional teams to transform business needs into clear, actionable technical requirements that support successful software delivery.
-            </p>
-            <p>
-                My experience includes business process analysis, requirement gathering, system documentation, API analysis, SQL-based data validation, and solution design. I enjoy simplifying complex business processes into structured workflows that help teams build scalable and maintainable solutions.
-            </p>
-            <p>
-                This portfolio showcases selected projects, case studies, and technical documentation that reflect my experience, problem-solving approach, and continuous learning journey.
-            </p>
-        </section>
-
-        <!-- Core Expertise Section -->
-        <section>
-            <h2>Core Expertise</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Business Analysis</h3>
-                    <ul>
-                        <li>Requirement Gathering</li>
-                        <li>Business Process Analysis</li>
-                        <li>User Story</li>
-                        <li>Gap Analysis</li>
-                        <li>Stakeholder Communication</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Documentation</h3>
-                    <ul>
-                        <li>BRD / FSD</li>
-                        <li>Flowchart</li>
-                        <li>Use Case</li>
-                        <li>Activity Diagram</li>
-                        <li>Business Rules</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Technical</h3>
-                    <ul>
-                        <li>SQL</li>
-                        <li>Postman</li>
-                        <li>Jira</li>
-                        <li>Confluence</li>
-                        <li>Git & GitHub</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Professional Experience Section -->
-        <section>
-            <h2>Professional Experience</h2>
-            <div class="timeline">
-                <div class="card">
-                    <h3>PT Pegadaian</h3>
-                    <p>Business Analyst</p>
-                    <small class="todo">TODO: Add achievements, responsibilities, timeline.</small>
-                </div>
-                <div class="card">
-                    <h3>Bank Danamon Indonesia</h3>
-                    <p>Technical Business Analyst</p>
-                    <small class="todo">TODO: Add achievements, responsibilities, timeline.</small>
-                </div>
-                <div class="card">
-                    <h3>Freelance Projects</h3>
-                    <p>HRIS & Digital Solutions</p>
-                    <small class="todo">TODO: Add project summaries.</small>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Projects Section -->
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Disaster Reporting System</h3>
-                    <p>Business analysis, workflow improvement and documentation.</p>
-                </div>
-                <div class="card">
-                    <h3>HRIS</h3>
-                    <p>Requirement gathering, payroll and leave management modules.</p>
-                </div>
-                <div class="card">
-                    <h3>POS Application</h3>
-                    <p>Business flow, database design and admin dashboard.</p>
-                </div>
-                <div class="card">
-                    <h3>Employee Management</h3>
-                    <p>Role-based employee management solution.</p>
-                </div>
-            </div>
-            <small class="todo">TODO: Each project will later have its own detail page (case study).</small>
-        </section>
-
-        <!-- Learning Journey Section -->
-        <section>
-            <h2>Learning Journey</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Currently Exploring</h3>
-                    <ul>
-                        <li>React</li>
-                        <li>Playwright</li>
-                        <li>Python</li>
-                        <li>AI Productivity</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section>
-            <h2>Contact</h2>
-            <p>Email : adinugroho.dev@gmail.com</p>
-            <p>LinkedIn : TODO</p>
-            <p>GitHub : TODO</p>
-        </section>
-
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>Designed & Built by Adi Nugroho</p>
-        <p>Portfolio Foundation v1.0</p>
-    </footer>
 
 </body>
 
