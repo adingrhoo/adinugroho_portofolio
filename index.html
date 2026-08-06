@@ -37,16 +37,17 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #ffffff;
             color: var(--text-dark);
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden; /* Tidak ada scrollbar */
+            line-height: 1.6;
+            width: 100%;
+            overflow-x: hidden;
         }
 
-        /* LAYOUT HERO 1 LAYAR PENUH */
+        /* LAYOUT HERO UTAMA */
         .hero-section {
             display: flex;
-            height: 100vh;
+            min-height: 100vh;
             width: 100%;
+            border-bottom: 1px solid var(--border-color);
         }
 
         /* SISI KIRI (KONTEN) */
@@ -88,7 +89,7 @@
         /* Tengah / Text Main */
         .hero-content {
             max-width: 580px;
-            margin: auto 0;
+            margin: 40px 0;
         }
 
         .role-badge {
@@ -223,6 +224,7 @@
             color: var(--text-muted);
             font-size: 0.9rem;
             font-weight: 600;
+            margin-top: 20px;
         }
 
         /* SISI KANAN (VISUAL & FLOATING CARDS) */
@@ -236,6 +238,7 @@
             align-items: flex-end;
             justify-content: center;
             overflow: hidden;
+            min-height: 550px;
         }
 
         .bg-vector {
@@ -331,10 +334,110 @@
         .card-experience { bottom: 160px; left: 30px; }
         .card-exploring { bottom: 60px; right: 50px; }
 
+        /* ===========================
+           BAGIAN BAWAH & KONTEN PORTOFOLIO
+        =========================== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        #about p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        small.todo {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-blue);
+            background-color: var(--badge-bg);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        footer {
+            background-color: var(--text-dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        footer p {
+            margin-bottom: 6px;
+        }
+
         /* Responsive Mobile Layout */
         @media (max-width: 1024px) {
-            body { overflow-y: auto; height: auto; }
-            .hero-section { flex-direction: column; height: auto; }
+            .hero-section { flex-direction: column; min-height: auto; }
             .hero-left { padding: 40px 24px; }
             .main-title { font-size: 3rem; }
             .sub-title { font-size: 2.2rem; }
@@ -346,22 +449,25 @@
 
 <body>
 
+    <!-- HERO SECTION -->
     <section class="hero-section">
 
         <!-- SISI KIRI -->
-        <div class="top-nav">
-    <a href="mailto:adinugroho.dev@gmail.com">
-        <i class="fa-regular fa-envelope"></i> adinugroho.dev@gmail.com
-    </a>
-    <span class="divider">|</span>
-    <a href="https://www.linkedin.com/in/adi-nugroho-b64b9316a/" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
-    </a>
-    <span class="divider">|</span>
-    <a href="#" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-github"></i> GitHub
-    </a>
-</div>
+        <div class="hero-left">
+
+            <div class="top-nav">
+                <a href="mailto:adinugroho.dev@gmail.com">
+                    <i class="fa-regular fa-envelope"></i> adinugroho.dev@gmail.com
+                </a>
+                <span class="divider">|</span>
+                <a href="https://www.linkedin.com/in/adi-nugroho-b64b9316a/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <span class="divider">|</span>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
 
             <div class="hero-content">
                 <div class="role-badge">
@@ -379,7 +485,7 @@
                     <a href="#" class="btn btn-primary">
                         <i class="fa-solid fa-download"></i> View Resume
                     </a>
-                    <a href="#" class="btn btn-secondary">
+                    <a href="#projects" class="btn btn-secondary">
                         <i class="fa-regular fa-folder-open"></i> Explore Projects
                     </a>
                 </div>
@@ -432,8 +538,7 @@
                 <code style="font-size: 0.8rem; font-weight: bold;">&#123; ... &#125;</code>
             </div>
 
-            <!-- FOTO PROFIL -->
-            <!-- Pastikan nama file foto di repositori GitHub persis: INI.png (perhatikan huruf besar/kecilnya) -->
+            <!-- FOTO SAMA PERSIS NAMA FILE DI GITHUB: INI.png -->
             <img src="INI.png" alt="Adi Nugroho" class="character-img">
 
             <div class="floating-card card-focus">
@@ -483,6 +588,138 @@
         </div>
 
     </section>
+
+    <!-- CONTAINER KONTEN PORTOFOLIO LENGKAP -->
+    <div class="container">
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am an IT Business Analyst with experience in mobile applications, web-based systems, and enterprise solutions. Throughout my career, I have collaborated with stakeholders and cross-functional teams to transform business needs into clear, actionable technical requirements that support successful software delivery.
+            </p>
+            <p>
+                My experience includes business process analysis, requirement gathering, system documentation, API analysis, SQL-based data validation, and solution design. I enjoy simplifying complex business processes into structured workflows that help teams build scalable and maintainable solutions.
+            </p>
+            <p>
+                This portfolio showcases selected projects, case studies, and technical documentation that reflect my experience, problem-solving approach, and continuous learning journey.
+            </p>
+        </section>
+
+        <!-- Core Expertise Section -->
+        <section>
+            <h2>Core Expertise</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Business Analysis</h3>
+                    <ul>
+                        <li>Requirement Gathering</li>
+                        <li>Business Process Analysis</li>
+                        <li>User Story</li>
+                        <li>Gap Analysis</li>
+                        <li>Stakeholder Communication</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Documentation</h3>
+                    <ul>
+                        <li>BRD / FSD</li>
+                        <li>Flowchart</li>
+                        <li>Use Case</li>
+                        <li>Activity Diagram</li>
+                        <li>Business Rules</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Technical</h3>
+                    <ul>
+                        <li>SQL</li>
+                        <li>Postman</li>
+                        <li>Jira</li>
+                        <li>Confluence</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section>
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="card">
+                    <h3>PT Pegadaian</h3>
+                    <p>Business Analyst</p>
+                    <small class="todo">TODO: Add achievements, responsibilities, timeline.</small>
+                </div>
+                <div class="card">
+                    <h3>Bank Danamon Indonesia</h3>
+                    <p>Technical Business Analyst</p>
+                    <small class="todo">TODO: Add achievements, responsibilities, timeline.</small>
+                </div>
+                <div class="card">
+                    <h3>Freelance Projects</h3>
+                    <p>HRIS & Digital Solutions</p>
+                    <small class="todo">TODO: Add project summaries.</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Disaster Reporting System</h3>
+                    <p>Business analysis, workflow improvement and documentation.</p>
+                </div>
+                <div class="card">
+                    <h3>HRIS</h3>
+                    <p>Requirement gathering, payroll and leave management modules.</p>
+                </div>
+                <div class="card">
+                    <h3>POS Application</h3>
+                    <p>Business flow, database design and admin dashboard.</p>
+                </div>
+                <div class="card">
+                    <h3>Employee Management</h3>
+                    <p>Role-based employee management solution.</p>
+                </div>
+            </div>
+            <small class="todo">TODO: Each project will later have its own detail page (case study).</small>
+        </section>
+
+        <!-- Learning Journey Section -->
+        <section>
+            <h2>Learning Journey</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Currently Exploring</h3>
+                    <ul>
+                        <li>React</li>
+                        <li>Playwright</li>
+                        <li>Python</li>
+                        <li>AI Productivity</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section>
+            <h2>Contact</h2>
+            <p>Email : adinugroho.dev@gmail.com</p>
+            <p>LinkedIn : https://www.linkedin.com/in/adi-nugroho-b64b9316a/</p>
+            <p>GitHub : TODO</p>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Designed & Built by Adi Nugroho</p>
+        <p>Portfolio Foundation v1.0</p>
+    </footer>
 
 </body>
 
