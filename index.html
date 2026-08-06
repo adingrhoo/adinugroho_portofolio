@@ -244,7 +244,7 @@
         }
 
         /* ==========================================
-           STYLING KOTAK VEKTOR (LEBIH BESAR & DETAIL)
+           STYLING KOTAK VEKTOR & DETAIL VISUAL
         ========================================== */
         .bg-vector {
             position: absolute;
@@ -270,7 +270,7 @@
             justify-content: space-between;
         }
 
-        /* 1. DASHBOARD: DATA ANALYTICS TREND LINE */
+        /* 1. DASHBOARD: REALISTIC AREA LINE CHART DENGAN GRID & SUMBU */
         .vec-dashboard { top: 40px; left: 30px; width: 220px; }
         .dash-trend-box {
             display: flex;
@@ -284,9 +284,28 @@
         }
         .dash-num { font-size: 1.3rem; font-weight: 800; color: var(--text-dark); }
         .dash-growth { font-size: 0.75rem; font-weight: 700; color: #16a34a; }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 45px;
+            background: linear-gradient(to bottom, #f8fafc, #ffffff);
+            border-left: 2px solid #cbd5e1;
+            border-bottom: 2px solid #cbd5e1;
+            border-radius: 0 0 0 2px;
+            padding-top: 4px;
+        }
+
+        .chart-grid-line {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #e2e8f0;
+        }
+
         .dash-svg-chart {
             width: 100%;
-            height: 36px;
+            height: 100%;
             overflow: visible;
         }
 
@@ -346,7 +365,7 @@
             transform: rotate(-45deg);
         }
 
-        /* 3. MOBILE APP: UI INTERFACE & APP ICONS GRID */
+        /* 3. MOBILE APP: APP ICONS GRID & INTERFACE */
         .vec-mobile { top: 340px; left: 20px; width: 170px; }
         .mobile-interface {
             display: flex;
@@ -611,7 +630,7 @@
         <!-- SISI KANAN -->
         <div class="hero-right">
 
-            <!-- 1. DASHBOARD: DATA ANALYTICS & TREND LINE CHART -->
+            <!-- 1. DASHBOARD: REALISTIC AREA LINE CHART -->
             <div class="bg-vector vec-dashboard">
                 <div class="vec-title">
                     <span>DASHBOARD</span>
@@ -622,9 +641,27 @@
                         <span class="dash-num">84%</span>
                         <span class="dash-growth"><i class="fa-solid fa-arrow-trend-up"></i> +12%</span>
                     </div>
-                    <svg class="dash-svg-chart" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 25 Q 25 20, 40 10 T 80 15 T 100 2" stroke="#2563eb" stroke-width="3" fill="none" stroke-linecap="round"/>
-                    </svg>
+                    
+                    <div class="chart-container">
+                        <div class="chart-grid-line" style="top: 30%;"></div>
+                        <div class="chart-grid-line" style="top: 60%;"></div>
+                        
+                        <svg class="dash-svg-chart" viewBox="0 0 100 40" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#2563eb" stop-opacity="0.3"/>
+                                    <stop offset="100%" stop-color="#2563eb" stop-opacity="0.0"/>
+                                </linearGradient>
+                            </defs>
+                            
+                            <polygon points="0,40 0,30 25,22 50,28 75,12 100,5 100,40" fill="url(#chartGrad)"/>
+                            <polyline points="0,30 25,22 50,28 75,12 100,5" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="25" cy="22" r="2.5" fill="#2563eb"/>
+                            <circle cx="50" cy="28" r="2.5" fill="#2563eb"/>
+                            <circle cx="75" cy="12" r="2.5" fill="#2563eb"/>
+                            <circle cx="100" cy="5" r="3" fill="#2563eb"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
 
@@ -671,7 +708,7 @@
                 <code style="font-size: 0.75rem; font-weight: 700; color: #2563eb;">&#123; status: 200 &#125;</code>
             </div>
 
-            <!-- FOTO SUDAH TERHUBUNG KE FILE: INI.png -->
+            <!-- FOTO PROFIL UTAMA -->
             <img src="INI.png" alt="Adi Nugroho" class="character-img">
 
             <div class="floating-card card-focus">
