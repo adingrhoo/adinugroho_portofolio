@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adi Nugroho - IT Business Analyst</title>
+    <title>BCMS Emergency Disruption Module - Adi Nugroho Case Study</title>
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Ikon -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -25,6 +25,7 @@
             --badge-bg: #eff6ff;
             --border-color: #e2e8f0;
             --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+            --gradient-accent: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
         }
 
         * {
@@ -40,609 +41,238 @@
             color: var(--text-dark);
             font-family: 'Plus Jakarta Sans', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
-            overflow-y: auto;
         }
 
-        /* LAYOUT HERO UTAMA */
-        .hero-section {
+        /* HEADER NAVIGASI */
+        .header-nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 20px 20px;
             display: flex;
-            min-height: 100vh;
-            width: 100%;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        /* SISI KIRI (KONTEN) */
-        .hero-left {
-            flex: 1.1;
-            padding: 40px 60px 40px 80px;
-            display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: space-between;
         }
 
-        /* Top Navigasi */
-        .top-nav {
-            display: flex;
+        .back-btn {
+            display: inline-flex;
             align-items: center;
-            gap: 20px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .top-nav a {
-            color: var(--text-dark);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.2s;
-        }
-
-        .top-nav a:hover {
+            gap: 10px;
             color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: transform 0.2s;
         }
 
-        .top-nav .divider {
-            color: #cbd5e1;
+        .back-btn:hover {
+            transform: translateX(-4px);
         }
 
-        /* Tengah / Text Main */
-        .hero-content {
-            max-width: 580px;
-            margin: 40px 0;
+        /* HERO PROJECT TITLE SECTION */
+        .project-hero {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .role-badge {
+        .project-category {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             background-color: var(--badge-bg);
             color: var(--primary-blue);
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 999px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 800;
             letter-spacing: 0.8px;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
         }
 
-        .role-badge .dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--primary-blue);
-            border-radius: 50%;
-        }
-
-        .main-title {
-            font-size: 3.8rem;
-            font-weight: 800;
-            line-height: 1.1;
-            color: var(--text-dark);
-            letter-spacing: -1px;
-            margin-bottom: 4px;
-        }
-
-        .sub-title {
+        .project-title {
             font-size: 2.8rem;
             font-weight: 800;
-            color: var(--primary-blue);
-            margin-bottom: 24px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .sub-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 48px;
-            height: 4px;
-            background-color: var(--primary-blue);
-            border-radius: 2px;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-top: 28px;
-            margin-bottom: 36px;
-            font-weight: 500;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 48px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-blue);
-            color: white;
-            border: none;
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--hover-blue);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: white;
             color: var(--text-dark);
-            border: 1.5px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--bg-light);
-            transform: translateY(-2px);
-        }
-
-        .skills-list {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .skill-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            padding: 12px 20px;
-            border-radius: 16px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .skill-item i {
-            color: var(--primary-blue);
-            font-size: 1.1rem;
-        }
-
-        .scroll-down {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-
-        /* SISI KANAN (VISUAL & FLOATING CARDS) */
-        .hero-right {
-            flex: 1;
-            background-color: #f1f5f9;
-            background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
-            background-size: 24px 24px;
-            position: relative;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            overflow: hidden;
-            min-height: 550px;
-        }
-
-        /* KOTAK VEKTOR & DETAIL VISUAL HERO */
-        .bg-vector {
-            position: absolute;
-            border: 1.5px solid #cbd5e1;
-            background-color: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(8px);
-            border-radius: 16px;
-            padding: 16px 20px;
-            color: #64748b;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            z-index: 1;
-        }
-
-        .vec-title {
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 0.8px;
-            color: #475569;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        /* 1. DASHBOARD: REALISTIC AREA LINE CHART DENGAN GRID & SUMBU */
-        .vec-dashboard { top: 40px; left: 30px; width: 220px; }
-        .dash-trend-box {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .dash-metric {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-        }
-        .dash-num { font-size: 1.3rem; font-weight: 800; color: var(--text-dark); }
-        .dash-growth { font-size: 0.75rem; font-weight: 700; color: #16a34a; }
-
-        .chart-container {
-            position: relative;
-            width: 100%;
-            height: 45px;
-            background: linear-gradient(to bottom, #f8fafc, #ffffff);
-            border-left: 2px solid #cbd5e1;
-            border-bottom: 2px solid #cbd5e1;
-            border-radius: 0 0 0 2px;
-            padding-top: 4px;
-        }
-
-        .chart-grid-line {
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            background-color: #e2e8f0;
-        }
-
-        .dash-svg-chart {
-            width: 100%;
-            height: 100%;
-            overflow: visible;
-        }
-
-        /* 2. BUSINESS PROCESS: BPMN FLOWCHART DIAGRAM */
-        .vec-process { top: 100px; right: 40px; width: 220px; }
-        .bpmn-diagram {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 6px;
-            margin-top: 4px;
-        }
-        .bpmn-node {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .bpmn-start {
-            width: 20px; height: 20px;
-            border-radius: 50%;
-            border: 2px solid var(--primary-blue);
-            background: #ffffff;
-        }
-        .bpmn-task {
-            padding: 6px 10px;
-            background: var(--badge-bg);
-            border: 1px solid var(--primary-blue);
-            border-radius: 6px;
-            font-size: 0.65rem;
-            font-weight: 800;
-            color: var(--primary-blue);
-        }
-        .bpmn-gateway {
-            width: 20px; height: 20px;
-            background: #ffffff;
-            border: 2px solid #64748b;
-            transform: rotate(45deg);
-        }
-        .bpmn-end {
-            width: 20px; height: 20px;
-            border-radius: 50%;
-            border: 3.5px solid #0f172a;
-            background: #ffffff;
-        }
-        .bpmn-arrow {
-            width: 12px; height: 2px;
-            background: #cbd5e1;
-            position: relative;
-        }
-        .bpmn-arrow::after {
-            content: '';
-            position: absolute; right: 0; top: -3px;
-            border: solid #cbd5e1;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 2px;
-            transform: rotate(-45deg);
-        }
-
-        /* 3. MOBILE APP: APP ICONS GRID & INTERFACE */
-        .vec-mobile { top: 340px; left: 20px; width: 170px; }
-        .mobile-interface {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .app-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 6px;
-        }
-        .app-icon-item {
-            aspect-ratio: 1;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.65rem;
-            color: white;
-        }
-        .bg-app-1 { background-color: #2563eb; }
-        .bg-app-2 { background-color: #0d9488; }
-        .bg-app-3 { background-color: #8b5cf6; }
-        .bg-app-4 { background-color: #f59e0b; }
-        .mobile-bar-sim {
-            height: 5px; width: 100%;
-            background: #e2e8f0;
-            border-radius: 3px;
-        }
-
-        /* 4. API CARD */
-        .vec-api { bottom: 110px; right: 40px; width: 130px; }
-
-        /* FOTO PROFIL UTAMA (DIPERBAIKI DENGAN HAPUS POLA CATUR & PRESISI) */
-        .character-img {
-            max-height: 80vh;
-            max-width: 360px;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            z-index: 2;
-            position: relative;
-            margin: 0 auto;
-            display: block;
-        }
-
-        /* FLOATING CARDS HERO */
-        .floating-card {
-            position: absolute;
-            background: #ffffff;
-            padding: 20px 24px;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            z-index: 3;
-            min-width: 220px;
-        }
-
-        .card-title-box {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-            font-weight: 800;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-        }
-
-        .card-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.85rem;
-        }
-
-        .icon-blue { background-color: #2563eb; }
-        .icon-teal { background-color: #0d9488; }
-        .icon-purple { background-color: #8b5cf6; }
-
-        .floating-card ul { list-style: none; }
-        .floating-card ul li {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-        }
-        .floating-card ul li:last-child { margin-bottom: 0; }
-        .floating-card ul li i { color: var(--primary-blue); font-size: 0.8rem; }
-
-        .card-focus { top: 220px; right: 30px; }
-        .card-experience { bottom: 160px; left: 20px; }
-        .card-exploring { bottom: 50px; right: 40px; }
-
-        /* ===========================
-           BAGIAN BAWAH & KONTEN PORTOFOLIO
-        =========================== */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        section { margin-bottom: 70px; }
-        section h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: var(--text-dark);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 12px;
-        }
-
-        #about p {
-            color: var(--text-muted);
+            line-height: 1.2;
             margin-bottom: 16px;
-            font-size: 1.05rem;
+            letter-spacing: -0.5px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 28px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--card-shadow);
-        }
-
-        .card h3 {
+        .project-subtitle {
             font-size: 1.2rem;
-            margin-bottom: 12px;
-            color: var(--text-dark);
+            color: var(--text-muted);
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 32px;
         }
 
-        .card p { color: var(--text-muted); font-size: 0.95rem; }
-        .card ul { padding-left: 20px; color: var(--text-muted); }
-        .card ul li { margin-bottom: 8px; font-size: 0.95rem; }
-
-        /* ==========================================
-           STYLING REVISI KHUSUS CORE EXPERTISE
-        ========================================== */
-        .expertise-card {
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 28px;
+        /* METADATA GRID */
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background-color: var(--bg-light);
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            padding: 24px;
+            border-radius: 16px;
             position: relative;
             overflow: hidden;
         }
 
-        .expertise-card::before {
+        .meta-grid::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 4px;
-            background: var(--primary-blue);
+            background: var(--gradient-accent);
         }
 
-        .expertise-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--card-shadow);
-            border-color: #cbd5e1;
+        .meta-item h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
         }
 
-        .expertise-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 20px;
-        }
-
-        .expertise-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            color: white;
-        }
-
-        .expertise-header h3 {
-            font-size: 1.25rem;
-            font-weight: 800;
+        .meta-item p {
+            font-size: 0.95rem;
+            font-weight: 700;
             color: var(--text-dark);
         }
 
-        .expertise-list {
-            list-style: none;
-            padding-left: 0;
+        /* MAIN CONTENT AREA */
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
         }
 
-        .expertise-list li {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 12px;
+        .section-block {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .section-block h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-dark);
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 500;
+            gap: 12px;
         }
 
-        .expertise-list li i {
+        .section-block h2 i {
             color: var(--primary-blue);
-            font-size: 0.9rem;
+            font-size: 1.3rem;
         }
 
-        /* STYLING TAGS / BADGES UNTUK TOOLS */
-        .tools-tags {
+        .section-block p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* CARD BOX FOR HIGHLIGHTS */
+        .info-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        /* LIST STYLING WITH CHECK ICONS */
+        .check-list {
+            list-style: none;
+            padding: 0;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            flex-direction: column;
+            gap: 14px;
             margin-top: 10px;
         }
 
-        .tool-tag {
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-
-        .tool-tag:hover {
-            background-color: var(--badge-bg);
-            color: var(--primary-blue);
-            border-color: var(--primary-blue);
-        }
-
-        .tool-tag i {
-            color: var(--primary-blue);
-        }
-
-        .timeline {
+        .check-list li {
             display: flex;
-            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .check-list li i {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        /* WORKFLOW COMPARE GRID */
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
-        small.todo {
-            display: inline-block;
-            margin-top: 10px;
-            color: var(--primary-blue);
-            background-color: var(--badge-bg);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-style: normal;
-            font-weight: 600;
+        .workflow-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
         }
 
+        .workflow-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .workflow-box.as-is h3 { color: #dc2626; }
+        .workflow-box.to-be h3 { color: #16a34a; }
+
+        /* TAGS */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .tag-item {
+            background-color: var(--badge-bg);
+            color: var(--primary-blue);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* FOOTER */
         footer {
             background-color: var(--text-dark);
             color: #94a3b8;
@@ -650,376 +280,150 @@
             padding: 40px 20px;
             margin-top: 60px;
             font-size: 0.9rem;
-            width: 100%;
         }
 
-        footer p { margin-bottom: 6px; }
-
-        /* Responsive Mobile Layout */
-        @media (max-width: 1024px) {
-            .hero-section { flex-direction: column; min-height: auto; }
-            .hero-left { padding: 40px 24px; }
-            .main-title { font-size: 3rem; }
-            .sub-title { font-size: 2.2rem; }
-            .hero-right { min-height: 550px; }
-            .floating-card { position: relative; top: auto; bottom: auto; left: auto; right: auto; margin: 10px; }
+        @media (max-width: 768px) {
+            .project-title { font-size: 2.1rem; }
+            .meta-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
+    <!-- NAVIGASI KEMBALI -->
+    <header class="header-nav">
+        <a href="../index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </header>
 
-        <!-- SISI KIRI -->
-        <div class="hero-left">
-
-            <div class="top-nav">
-                <a href="mailto:adinugroho.dev@gmail.com">
-                    <i class="fa-regular fa-envelope"></i> adinugroho.dev@gmail.com
-                </a>
-                <span class="divider">|</span>
-                <a href="https://www.linkedin.com/in/adi-nugroho-b64b9316a/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-                <span class="divider">|</span>
-                <a href="https://github.com/adingrhoo" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
-            </div>
-
-            <div class="hero-content">
-                <div class="role-badge">
-                    <span class="dot"></span> IT BUSINESS ANALYST
-                </div>
-
-                <h1 class="main-title">Adi Nugroho</h1>
-                <div class="sub-title">IT Business Analyst</div>
-
-                <p class="description">
-                    Transforming business needs into scalable digital solutions through structured analysis and data-driven insights.
-                </p>
-
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fa-solid fa-download"></i> View Resume
-                    </a>
-                    <a href="#projects" class="btn btn-secondary">
-                        <i class="fa-regular fa-folder-open"></i> Explore Projects
-                    </a>
-                </div>
-
-                <div class="skills-list">
-                    <div class="skill-item">
-                        <i class="fa-solid fa-mobile-screen-button"></i> Mobile Apps
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-solid fa-building"></i> Enterprise Systems
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-solid fa-database"></i> SQL
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-solid fa-arrows-spin"></i> Agile
-                    </div>
-                    <div class="skill-item">
-                        <i class="fa-solid fa-chart-simple"></i> Data Analysis
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroll-down">
-                <i class="fa-solid fa-chevron-down"></i> Scroll to explore
-            </div>
-
+    <!-- HERO SECTION CASE STUDY -->
+    <section class="project-hero">
+        <div class="project-category">
+            <i class="fa-solid fa-building-shield"></i> Enterprise Risk Management / POJK Compliance
         </div>
+        <h1 class="project-title">BCMS - Emergency Disruption Reporting & Broadcast System</h1>
+        <p class="project-subtitle">
+            Restructuring the Business Continuity Management System (BCMS) to accelerate disaster response, automate regional corporate email notifications, and enforce strict role-based access controls across nationwide branches.
+        </p>
 
-        <!-- SISI KANAN -->
-        <div class="hero-right">
-
-            <!-- 1. DASHBOARD: REALISTIC AREA LINE CHART -->
-            <div class="bg-vector vec-dashboard">
-                <div class="vec-title">
-                    <span>DASHBOARD</span>
-                    <i class="fa-solid fa-chart-line" style="color: #2563eb;"></i>
-                </div>
-                <div class="dash-trend-box">
-                    <div class="dash-metric">
-                        <span class="dash-num">84%</span>
-                        <span class="dash-growth"><i class="fa-solid fa-arrow-trend-up"></i> +12%</span>
-                    </div>
-                    
-                    <div class="chart-container">
-                        <div class="chart-grid-line" style="top: 30%;"></div>
-                        <div class="chart-grid-line" style="top: 60%;"></div>
-                        
-                        <svg class="dash-svg-chart" viewBox="0 0 100 40" preserveAspectRatio="none">
-                            <defs>
-                                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#2563eb" stop-opacity="0.3"/>
-                                    <stop offset="100%" stop-color="#2563eb" stop-opacity="0.0"/>
-                                </linearGradient>
-                            </defs>
-                            
-                            <polygon points="0,40 0,30 25,22 50,28 75,12 100,5 100,40" fill="url(#chartGrad)"/>
-                            <polyline points="0,30 25,22 50,28 75,12 100,5" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="25" cy="22" r="2.5" fill="#2563eb"/>
-                            <circle cx="50" cy="28" r="2.5" fill="#2563eb"/>
-                            <circle cx="75" cy="12" r="2.5" fill="#2563eb"/>
-                            <circle cx="100" cy="5" r="3" fill="#2563eb"/>
-                        </svg>
-                    </div>
-                </div>
+        <!-- METADATA PROYEK -->
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h4>Organization</h4>
+                <p>PT Pegadaian</p>
             </div>
-
-            <!-- 2. BUSINESS PROCESS: BPMN FLOWCHART DIAGRAM -->
-            <div class="bg-vector vec-process">
-                <div class="vec-title">
-                    <span>BUSINESS PROCESS</span>
-                    <i class="fa-solid fa-diagram-project" style="color: #2563eb;"></i>
-                </div>
-                <div class="bpmn-diagram">
-                    <div class="bpmn-node bpmn-start"></div>
-                    <div class="bpmn-arrow"></div>
-                    <div class="bpmn-node bpmn-task">Task</div>
-                    <div class="bpmn-arrow"></div>
-                    <div class="bpmn-node bpmn-gateway"></div>
-                    <div class="bpmn-arrow"></div>
-                    <div class="bpmn-node bpmn-end"></div>
-                </div>
+            <div class="meta-item">
+                <h4>Role</h4>
+                <p>IT Business Analyst</p>
             </div>
-
-            <!-- 3. MOBILE APP: APP ICONS GRID & INTERFACE -->
-            <div class="bg-vector vec-mobile">
-                <div class="vec-title">
-                    <span>MOBILE APP</span>
-                    <i class="fa-solid fa-mobile-screen-button" style="color: #2563eb;"></i>
-                </div>
-                <div class="mobile-interface">
-                    <div class="app-grid">
-                        <div class="app-icon-item bg-app-1"><i class="fa-solid fa-user"></i></div>
-                        <div class="app-icon-item bg-app-2"><i class="fa-solid fa-cart-shopping"></i></div>
-                        <div class="app-icon-item bg-app-3"><i class="fa-solid fa-gear"></i></div>
-                        <div class="app-icon-item bg-app-4"><i class="fa-solid fa-bell"></i></div>
-                    </div>
-                    <div class="mobile-bar-sim"></div>
-                </div>
+            <div class="meta-item">
+                <h4>Regulatory Target</h4>
+                <p>POJK No. 4 / 2021</p>
             </div>
-
-            <!-- 4. API CARD -->
-            <div class="bg-vector vec-api">
-                <div class="vec-title">
-                    <span>API</span>
-                    <i class="fa-solid fa-code" style="color: #2563eb;"></i>
-                </div>
-                <code style="font-size: 0.75rem; font-weight: 700; color: #2563eb;">&#123; status: 200 &#125;</code>
+            <div class="meta-item">
+                <h4>Impact Scope</h4>
+                <p>Nationwide Network (HQ, Kanwil, & Area Consols)</p>
             </div>
-
-            <!-- FOTO PROFIL UTAMA (Ubah nama file jika perlu) -->
-            <img src="profile-hero.png" alt="Adi Nugroho" class="character-img">
-
-            <div class="floating-card card-focus">
-                <div class="card-title-box">
-                    <div class="card-icon icon-blue">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    My Focus
-                </div>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Business Analysis</li>
-                    <li><i class="fa-solid fa-check"></i> System Design</li>
-                    <li><i class="fa-solid fa-check"></i> Stakeholder Collaboration</li>
-                    <li><i class="fa-solid fa-check"></i> Data-Driven Decision</li>
-                </ul>
-            </div>
-
-            <div class="floating-card card-experience">
-                <div class="card-title-box">
-                    <div class="card-icon icon-teal">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </div>
-                    Experience
-                </div>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Mobile Applications</li>
-                    <li><i class="fa-solid fa-check"></i> Web Applications</li>
-                    <li><i class="fa-solid fa-check"></i> Enterprise Systems</li>
-                    <li><i class="fa-solid fa-check"></i> Cross-functional Teams</li>
-                </ul>
-            </div>
-
-            <div class="floating-card card-exploring">
-                <div class="card-title-box">
-                    <div class="card-icon icon-purple">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    Currently Exploring
-                </div>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Advanced SQL</li>
-                    <li><i class="fa-solid fa-check"></i> Data Analytics</li>
-                    <li><i class="fa-solid fa-check"></i> Business Intelligence</li>
-                </ul>
-            </div>
-
         </div>
-
     </section>
 
-    <!-- CONTAINER KONTEN PORTOFOLIO LENGKAP -->
-    <div class="container">
+    <!-- KONTEN UTAMA CASE STUDY -->
+    <main class="content-container">
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
+        <!-- 1. PROJECT OVERVIEW -->
+        <div class="section-block">
+            <h2><i class="fa-solid fa-circle-info"></i> Executive Overview & Background</h2>
             <p>
-                I am an IT Business Analyst with experience in mobile applications, web-based systems, and enterprise solutions. Throughout my career, I have collaborated with stakeholders and cross-functional teams to transform business needs into clear, actionable technical requirements that support successful software delivery.
+                Developing and expanding the Incident and Disaster Management Module within the Business Continuity Management System (BCMS) serves as a critical operational tool to accelerate emergency response during crisis events. This initiative ensures business continuity while fulfilling regulatory compliance under <strong>POJK No. 4 / 2021</strong> regarding Integrated Risk Management in Information Technology for Non-Bank Financial Institutions.
             </p>
-            <p>
-                My experience includes business process analysis, requirement gathering, system documentation, API analysis, SQL-based data validation, and solution design. I enjoy simplifying complex business processes into structured workflows that help teams build scalable and maintainable solutions.
-            </p>
-            <p>
-                This portfolio showcases selected projects, case studies, and technical documentation that reflect my experience, problem-solving approach, and continuous learning journey.
-            </p>
-        </section>
+        </div>
 
-        <!-- Core Expertise Section (REVISI MODERN) -->
-        <section>
-            <h2>Core Expertise</h2>
-            <div class="grid">
-                
-                <!-- Card 1: Business Analysis -->
-                <div class="expertise-card">
-                    <div class="expertise-header">
-                        <div class="expertise-icon icon-blue">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <h3>Business Analysis</h3>
-                    </div>
-                    <ul class="expertise-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Requirement Gathering</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Business Process Analysis</li>
-                        <li><i class="fa-solid fa-circle-check"></i> User Story & Acceptance Criteria</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Gap Analysis</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Stakeholder Communication</li>
-                    </ul>
-                </div>
-
-                <!-- Card 2: Documentation -->
-                <div class="expertise-card">
-                    <div class="expertise-header">
-                        <div class="expertise-icon icon-teal">
-                            <i class="fa-solid fa-file-contract"></i>
-                        </div>
-                        <h3>Documentation</h3>
-                    </div>
-                    <ul class="expertise-list">
-                        <li><i class="fa-solid fa-circle-check"></i> BRD / FSD Documentation</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Process Flowchart & BPMN</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Use Case & Activity Diagram</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Business Rules Specification</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Wireframing / UI Mockup</li>
-                    </ul>
-                </div>
-
-                <!-- Card 3: Technical & Tools -->
-                <div class="expertise-card">
-                    <div class="expertise-header">
-                        <div class="expertise-icon icon-purple">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3>Technical & Tools</h3>
-                    </div>
-                    <div class="tools-tags">
-                        <span class="tool-tag"><i class="fa-solid fa-database"></i> SQL</span>
-                        <span class="tool-tag"><i class="fa-solid fa-network-wired"></i> Postman</span>
-                        <span class="tool-tag"><i class="fa-brands fa-jira"></i> Jira</span>
-                        <span class="tool-tag"><i class="fa-brands fa-confluence"></i> Confluence</span>
-                        <span class="tool-tag"><i class="fa-brands fa-github"></i> Git & GitHub</span>
-                        <span class="tool-tag"><i class="fa-solid fa-diagram-project"></i> Draw.io / Visio</span>
-                    </div>
-                </div>
-
+        <!-- 2. BUSINESS OBJECTIVES -->
+        <div class="section-block">
+            <h2><i class="fa-solid fa-bullseye"></i> Key Business Objectives</h2>
+            <div class="info-card">
+                <ul class="check-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Rapid Incident Reporting:</strong> Provide a standardized media platform to instantly report disaster events and operational disruptions at any work unit/branch.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Automated Broadcast Notifications:</strong> Raise immediate situational awareness by delivering automated emergency alerts directly to personal corporate emails of affected regional leaders and personnel.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Impact & Damage Assessment:</strong> Enable tracking of asset damage, facility downtime, equipment status, and recovery time objectives (RTO).</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Monitoring & Recovery Action Plan:</strong> Evaluate post-incident recovery actions, track operational suspension durations, and calculate recovery costs under Crisis Management Team governance.</span>
+                    </li>
+                </ul>
             </div>
-        </section>
+        </div>
 
-        <!-- Professional Experience Section -->
-        <section>
-            <h2>Professional Experience</h2>
-            <div class="timeline">
-                <div class="card">
-                    <h3>PT Pegadaian</h3>
-                    <p>Business Analyst</p>
-                    <small class="todo">TODO: Add achievements, responsibilities, timeline.</small>
+        <!-- 3. WORKFLOW ANALYSIS (AS-IS VS TO-BE) -->
+        <div class="section-block">
+            <h2><i class="fa-solid fa-diagram-project"></i> Process Re-Engineering (As-Is vs To-Be)</h2>
+            <div class="workflow-grid">
+                <div class="workflow-box as-is">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> As-Is Workflow</h3>
+                    <p>Standard reporting notified higher-tier organizational emails sequentially, causing potential delays in multi-tier regional escalation during critical disaster situations.</p>
                 </div>
-                <div class="card">
-                    <h3>Bank Danamon Indonesia</h3>
-                    <p>Technical Business Analyst</p>
-                    <small class="todo">TODO: Add achievements, responsibilities, timeline.</small>
-                </div>
-                <div class="card">
-                    <h3>Freelance Projects</h3>
-                    <p>HRIS & Digital Solutions</p>
-                    <small class="todo">TODO: Add project summaries.</small>
+                <div class="workflow-box to-be">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> To-Be Workflow</h3>
+                    <p>Integrated module restructuring featuring sub-modules: Dashboard, Initial Report, Follow-Up, Monitoring, Reports, and a dedicated Emergency Disruption Announcement system.</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Featured Projects Section -->
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Disaster Reporting System</h3>
-                    <p>Business analysis, workflow improvement and documentation.</p>
-                </div>
-                <div class="card">
-                    <h3>HRIS</h3>
-                    <p>Requirement gathering, payroll and leave management modules.</p>
-                </div>
-                <div class="card">
-                    <h3>POS Application</h3>
-                    <p>Business flow, database design and admin dashboard.</p>
-                </div>
-                <div class="card">
-                    <h3>Employee Management</h3>
-                    <p>Role-based employee management solution.</p>
-                </div>
+        <!-- 4. MY ROLE & BA DELIVERABLES -->
+        <div class="section-block">
+            <h2><i class="fa-solid fa-user-gear"></i> My Role & Technical BA Deliverables</h2>
+            <div class="info-card">
+                <ul class="check-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Business Requirement Document (BRD) Compilation:</strong> Translated user needs into structured functional requirements, including UI module rearrangement and navigation logic.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>User Access Matrix (UAM) Specification:</strong> Formulated strict access privileges for new operational roles, introducing <em>Super Announcer</em> (HQ & Admin) and <em>Announcer</em> (Reviewer & Approver BCM) roles.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Notification Routing Logic & Parameters:</strong> Designed functional parameters allowing dynamic mapping of target corporate email recipients across nationwide Consol units (12 Regional Offices & 70+ Area Consols).</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Cross-Functional Alignment & SDLC Support:</strong> Facilitated requirement clarifications and guided development through SIT, UAT, Regression Testing, and Deployment phases with IT PMO, Risk Management Users, Developers, and QA teams.</span>
+                    </li>
+                </ul>
             </div>
-            <small class="todo">TODO: Each project will later have its own detail page (case study).</small>
-        </section>
+        </div>
 
-        <!-- Learning Journey Section -->
-        <section>
-            <h2>Learning Journey</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Currently Exploring</h3>
-                    <ul>
-                        <li>React</li>
-                        <li>Playwright</li>
-                        <li>Python</li>
-                        <li>AI Productivity</li>
-                    </ul>
-                </div>
+        <!-- 5. TOOLS & METHODOLOGIES USED -->
+        <div class="section-block">
+            <h2><i class="fa-solid fa-microchip"></i> Skills & Methods Applied</h2>
+            <div class="tags-container">
+                <span class="tag-item">Business Requirement Document (BRD)</span>
+                <span class="tag-item">Process Flowchart Analysis</span>
+                <span class="tag-item">User Access Matrix (UAM)</span>
+                <span class="tag-item">Notification Logic Mapping</span>
+                <span class="tag-item">POJK Regulatory Compliance</span>
+                <span class="tag-item">UAT Execution & Facilitation</span>
+                <span class="tag-item">Agile / Scrum Collaboration</span>
             </div>
-        </section>
+        </div>
 
-        <!-- Contact Section -->
-        <section>
-            <h2>Contact</h2>
-            <p>Email : adinugroho.dev@gmail.com</p>
-            <p>LinkedIn : https://www.linkedin.com/in/adi-nugroho-b64b9316a/</p>
-            <p>GitHub : https://github.com/adingrhoo</p>
-        </section>
-
-    </div>
+    </main>
 
     <!-- FOOTER -->
     <footer>
-        <p>Designed & Built by Adi Nugroho</p>
-        <p>Portfolio Foundation v1.0</p>
+        <p>Case Study Built & Documented by Adi Nugroho — IT Business Analyst</p>
     </footer>
 
 </body>
