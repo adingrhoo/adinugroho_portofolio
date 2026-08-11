@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCMS Emergency Disruption Module - Adi Nugroho Case Study</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PANGGIL FILE CSS SAMA DENGAN TAMBAHAN PATH ../ -->
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .header-nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 20px 20px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .project-hero {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .meta-grid::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .meta-item h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .meta-item p {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .section-block { display: flex; flex-direction: column; gap: 16px; }
+
+        .section-block h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .check-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-muted);
+        }
+
+        .check-list li i { color: var(--primary-blue); font-size: 1.1rem; margin-top: 3px; }
+
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .workflow-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .workflow-box h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+        .workflow-box.as-is h3 { color: #dc2626; }
+        .workflow-box.to-be h3 { color: #16a34a; }
+    </style>
+</head>
+
+<body>
+
+    <header class="header-nav">
+        <a href="../index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </header>
+
+    <section class="project-hero">
+        <div class="card-tag" style="margin-bottom: 16px; display: inline-block;">
+            <i class="fa-solid fa-building-shield"></i> Enterprise Risk Management / POJK Compliance
+        </div>
+        <h1 class="project-title">BCMS - Emergency Disruption Reporting & Broadcast System</h1>
+        <p class="project-subtitle">
+            Restructuring the Business Continuity Management System (BCMS) to accelerate disaster response, automate regional corporate email notifications, and enforce strict role-based access controls across nationwide branches.
+        </p>
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h4>Organization</h4>
+                <p>PT Pegadaian</p>
+            </div>
+            <div class="meta-item">
+                <h4>Role</h4>
+                <p>IT Business Analyst</p>
+            </div>
+            <div class="meta-item">
+                <h4>Regulatory Target</h4>
+                <p>POJK No. 4 / 2021</p>
+            </div>
+            <div class="meta-item">
+                <h4>Impact Scope</h4>
+                <p>Nationwide Network (HQ, Kanwil, & Area Consols)</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="content-container">
+
+        <div class="section-block">
+            <h2><i class="fa-solid fa-circle-info" style="color: var(--primary-blue);"></i> Executive Overview & Background</h2>
+            <p>
+                Developing and expanding the Incident and Disaster Management Module within the Business Continuity Management System (BCMS) serves as a critical operational tool to accelerate emergency response during crisis events[cite: 1]. This initiative ensures business continuity while fulfilling regulatory compliance under <strong>POJK No. 4 / 2021</strong> regarding Integrated Risk Management in Information Technology for Non-Bank Financial Institutions[cite: 1].
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2><i class="fa-solid fa-bullseye" style="color: var(--primary-blue);"></i> Key Business Objectives</h2>
+            <div class="accent-card">
+                <ul class="check-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Rapid Incident Reporting:</strong> Provide a standardized media platform to instantly report disaster events and operational disruptions at any work unit/branch[cite: 1].</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Automated Broadcast Notifications:</strong> Raise immediate situational awareness by delivering automated emergency alerts directly to personal corporate emails of affected regional leaders and personnel[cite: 1].</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Impact & Damage Assessment:</strong> Enable tracking of asset damage, facility downtime, equipment status, and recovery time objectives (RTO)[cite: 1].</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Monitoring & Recovery Action Plan:</strong> Evaluate post-incident recovery actions, track operational suspension durations, and calculate recovery costs under Crisis Management Team governance[cite: 1].</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2><i class="fa-solid fa-diagram-project" style="color: var(--primary-blue);"></i> Process Re-Engineering (As-Is vs To-Be)</h2>
+            <div class="workflow-grid">
+                <div class="workflow-box as-is">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> As-Is Workflow</h3>
+                    <p>Standard reporting notified higher-tier organizational emails sequentially, causing potential delays in multi-tier regional escalation during critical disaster situations[cite: 1].</p>
+                </div>
+                <div class="workflow-box to-be">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> To-Be Workflow</h3>
+                    <p>Integrated module restructuring featuring sub-modules: Dashboard, Initial Report, Follow-Up, Monitoring, Reports, and a dedicated Emergency Disruption Announcement system[cite: 1].</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2><i class="fa-solid fa-user-gear" style="color: var(--primary-blue);"></i> My Role & Technical BA Deliverables</h2>
+            <div class="accent-card">
+                <ul class="check-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Business Requirement Document (BRD) Compilation:</strong> Translated user needs into structured functional requirements, including UI module rearrangement and navigation logic[cite: 1].</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>User Access Matrix (UAM) Specification:</strong> Formulated strict access privileges for new operational roles, introducing <em>Super Announcer</em> (HQ & Admin) and <em>Announcer</em> (Reviewer & Approver BCM) roles[cite: 1].</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Notification Routing Logic & Parameters:</strong> Designed functional parameters allowing dynamic mapping of target corporate email recipients across nationwide Consol units (12 Regional Offices & 70+ Area Consols)[cite: 1].</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Cross-Functional Alignment & SDLC Support:</strong> Facilitated requirement clarifications and guided development through SIT, UAT, Regression Testing, and Deployment phases with IT PMO, Risk Management Users, Developers, and QA teams[cite: 1].</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2><i class="fa-solid fa-microchip" style="color: var(--primary-blue);"></i> Skills & Methods Applied</h2>
+            <div class="tools-tags">
+                <span class="tool-tag">Business Requirement Document (BRD)</span>
+                <span class="tool-tag">Process Flowchart Analysis</span>
+                <span class="tool-tag">User Access Matrix (UAM)</span>
+                <span class="tool-tag">Notification Logic Mapping</span>
+                <span class="tool-tag">POJK Regulatory Compliance</span>
+                <span class="tool-tag">UAT Execution & Facilitation</span>
+                <span class="tool-tag">Agile / Scrum Collaboration</span>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Case Study Built & Documented by Adi Nugroho — IT Business Analyst</p>
+    </footer>
+
+</body>
+
+</html>
