@@ -411,6 +411,7 @@
             color: var(--text-muted);
             margin-bottom: 16px;
             font-size: 1.05rem;
+            line-height: 1.7;
         }
 
         .grid {
@@ -431,7 +432,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start; /* Mengatasi jarak renggang berlebihan */
         }
 
         /* AKSEN GRADASI BIRU DI ATAS KARTU */
@@ -480,7 +481,7 @@
             font-size: 1.25rem;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 10px;
+            margin-bottom: 0;
         }
 
         .accent-card p {
@@ -511,7 +512,7 @@
             margin-top: 5px;
         }
 
-        /* LINK BACA DETAIL CASE STUDY */
+        /* LINK BACA DETAIL CASE STUDY (NEW TAB READY) */
         .card-link {
             display: inline-flex;
             align-items: center;
@@ -522,6 +523,7 @@
             text-decoration: none;
             transition: gap 0.2s;
             margin-top: auto;
+            padding-top: 16px;
         }
 
         .card-link:hover {
@@ -529,12 +531,12 @@
             color: var(--hover-blue);
         }
 
-        /* CORE EXPERTISE STYLING */
+        /* PERBAIKAN CORE EXPERTISE AGAR RAPI & MENEMPET DEKAT HEADER */
         .expertise-header {
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 16px; /* Dikurangi agar tidak kosong/renggang */
         }
 
         .expertise-icon {
@@ -546,9 +548,15 @@
             justify-content: center;
             font-size: 1.1rem;
             color: white;
+            flex-shrink: 0;
         }
 
-        .expertise-list { list-style: none; padding-left: 0; }
+        .expertise-list { 
+            list-style: none; 
+            padding-left: 0; 
+            margin: 0;
+        }
+
         .expertise-list li {
             font-size: 0.95rem;
             color: var(--text-muted);
@@ -558,9 +566,23 @@
             gap: 10px;
             font-weight: 500;
         }
-        .expertise-list li i { color: var(--primary-blue); font-size: 0.9rem; }
 
-        .tools-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .expertise-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .expertise-list li i { 
+            color: var(--primary-blue); 
+            font-size: 0.9rem; 
+        }
+
+        .tools-tags { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            margin-top: 0px; 
+        }
+
         .tool-tag {
             background-color: var(--bg-light);
             border: 1px solid var(--border-color);
@@ -574,7 +596,13 @@
             gap: 8px;
             transition: all 0.2s;
         }
-        .tool-tag:hover { background-color: var(--badge-bg); color: var(--primary-blue); border-color: var(--primary-blue); }
+
+        .tool-tag:hover { 
+            background-color: var(--badge-bg); 
+            color: var(--primary-blue); 
+            border-color: var(--primary-blue); 
+        }
+
         .tool-tag i { color: var(--primary-blue); }
 
         footer {
@@ -632,7 +660,7 @@
                 <div class="sub-title">IT Business Analyst</div>
 
                 <p class="description">
-                    Information System Graduate with 4+ years of experience as a Business Analyst in system development, requirements engineering, and cross-functional team coordination.
+                    Information System Graduate with 5+ years of experience as a Business Analyst in system development, requirements engineering, and cross-functional team coordination.
                 </p>
 
                 <div class="cta-buttons">
@@ -804,18 +832,21 @@
     <!-- CONTAINER KONTEN PORTOFOLIO LENGKAP -->
     <div class="container">
 
-        <!-- About Section -->
+        <!-- 1. ABOUT ME SECTION (TEKS ASLI DARI ANDA) -->
         <section id="about">
             <h2>About Me</h2>
             <p>
-                I am an Information System Graduate with over 4 years of experience as a Business Analyst in system development and IT project implementation[cite: 2]. Experienced in analyzing business requirements, coordinating with stakeholders, validating system requirements, and acting as a bridge between users, technical teams, and vendors to ensure solutions align with operational needs[cite: 2].
+                I am an Information Systems graduate and IT Business Analyst with over 5 years of experience across system development and IT project implementation, with a strong background in mobile and web applications. I have worked closely with stakeholders, developers, QA teams, and vendors to translate business needs into clear requirements and practical technical solutions.
             </p>
             <p>
-                Proven track record in requirement engineering, gap analysis, SIT/UAT facilitation, and system implementation monitoring across financial services, banking, and enterprise HRMS environments[cite: 2].
+                My experience includes requirement analysis, business process analysis, gap analysis, system documentation, API analysis, SIT/UAT support, and system implementation. I enjoy bridging the gap between business and technology by turning complex processes and requirements into structured solutions that development teams can understand and implement effectively.
+            </p>
+            <p>
+                Alongside my professional experience, I am currently expanding my skills in Data Analytics, with a focus on SQL and data exploration through practical business case studies. This portfolio showcases selected projects, case studies, technical work, and my continuous learning journey.
             </p>
         </section>
 
-        <!-- Core Expertise Section -->
+        <!-- 2. CORE EXPERTISE SECTION (SUDAH DIRAPIKAN JARAK & SIMETRIS) -->
         <section>
             <h2>Core Expertise</h2>
             <div class="grid">
@@ -837,7 +868,7 @@
                     </ul>
                 </div>
 
-                <!-- Card 2: Documentation -->
+                <!-- Card 2: Documentation & Testing -->
                 <div class="accent-card">
                     <div class="expertise-header">
                         <div class="expertise-icon icon-teal">
@@ -875,20 +906,20 @@
             </div>
         </section>
 
-        <!-- Professional Experience Section (SESUAI DENGAN CV) -->
+        <!-- 3. PROFESSIONAL EXPERIENCE SECTION -->
         <section>
             <h2>Professional Experience</h2>
             <div class="grid">
                 
-                <!-- 1. Pegadaian -->
+                <!-- Pegadaian -->
                 <div class="accent-card">
                     <div>
                         <div class="card-top">
                             <span class="card-tag">Financial Services</span>
                             <span class="card-year">Oct 2025 - Jun 2026</span>
                         </div>
-                        <h3>PT. Pegadaian</h3>
-                        <p style="font-weight: 700; color: var(--primary-blue); margin-bottom: 8px;">Business Analyst (via PT Pesona Optima Jasa)</p>
+                        <h3 style="margin-bottom: 6px;">PT. Pegadaian</h3>
+                        <p style="font-weight: 700; color: var(--primary-blue); margin-bottom: 12px;">Business Analyst (via PT Pesona Optima Jasa)</p>
                         <ul class="experience-bullets">
                             <li><i class="fa-solid fa-chevron-right"></i> Authored analysis & requirement documents as technical guidelines for Developers & QA[cite: 2].</li>
                             <li><i class="fa-solid fa-chevron-right"></i> Facilitated requirement clarification sessions and gap analysis to minimize implementation errors[cite: 2].</li>
@@ -897,15 +928,15 @@
                     </div>
                 </div>
 
-                <!-- 2. Danamon -->
+                <!-- Danamon -->
                 <div class="accent-card">
                     <div>
                         <div class="card-top">
                             <span class="card-tag">Banking</span>
                             <span class="card-year">Mar 2023 - Jan 2025</span>
                         </div>
-                        <h3>Bank Danamon Indonesia</h3>
-                        <p style="font-weight: 700; color: var(--primary-blue); margin-bottom: 8px;">Technical Business Analyst</p>
+                        <h3 style="margin-bottom: 6px;">Bank Danamon Indonesia</h3>
+                        <p style="font-weight: 700; color: var(--primary-blue); margin-bottom: 12px;">Technical Business Analyst</p>
                         <ul class="experience-bullets">
                             <li><i class="fa-solid fa-chevron-right"></i> Analyzed integration impact on Middleware and API applications[cite: 2].</li>
                             <li><i class="fa-solid fa-chevron-right"></i> Created Technical Specification Documents (TSD) and API specification guidelines[cite: 2].</li>
@@ -914,15 +945,15 @@
                     </div>
                 </div>
 
-                <!-- 3. Prawathiya (Grouped Career Progress) -->
+                <!-- Prawathiya -->
                 <div class="accent-card">
                     <div>
                         <div class="card-top">
                             <span class="card-tag">HRMS & Custom Apps</span>
                             <span class="card-year">Nov 2017 - Mar 2023</span>
                         </div>
-                        <h3>PT. Prawathiya Karsa Pradiptha</h3>
-                        <p style="font-weight: 700; color: var(--primary-blue); margin-bottom: 8px;">Business Analyst (Promoted from Service Desk)</p>
+                        <h3 style="margin-bottom: 6px;">PT. Prawathiya Karsa Pradiptha</h3>
+                        <p style="font-weight: 700; color: var(--primary-blue); margin-bottom: 12px;">Business Analyst (Promoted from Service Desk)</p>
                         <ul class="experience-bullets">
                             <li><i class="fa-solid fa-chevron-right"></i> <strong>BA Role (2020 - 2023):</strong> End-to-end requirement analysis, wireframing, QA testing schema, and client status reports[cite: 2].</li>
                             <li><i class="fa-solid fa-chevron-right"></i> <strong>Service Desk Role (2017 - 2020):</strong> Handled SIPAS HRMS support, database troubleshooting, and user training[cite: 2].</li>
@@ -933,23 +964,23 @@
             </div>
         </section>
 
-        <!-- Featured Projects Section -->
+        <!-- 4. FEATURED PROJECTS SECTION (TERHUBUNG KE NEW TAB) -->
         <section id="projects">
             <h2>Featured Projects (PT Pegadaian)</h2>
             <div class="grid">
                 
-                <!-- Project 1: BCMS Disruption (DENGAN LINK KE CASE STUDY) -->
+                <!-- Project 1: BCMS Disruption (LINK KELUAR TAB BARU) -->
                 <div class="accent-card">
                     <div>
                         <div class="card-top">
                             <span class="card-tag">Enterprise Risk / POJK</span>
                             <span class="card-year">2026</span>
                         </div>
-                        <h3>BCMS - Emergency Disruption Module</h3>
+                        <h3 style="margin-bottom: 10px;">BCMS - Emergency Disruption Module</h3>
                         <p>Restructured BCMS incident reporting system and created an automated regional email broadcast scheme for emergency response[cite: 1].</p>
                     </div>
-                    <a href="projects/pegadaian-bcms.html" class="card-link">
-                        Read Case Study <i class="fa-solid fa-arrow-right"></i>
+                    <a href="projects/pegadaian-bcms.html" target="_blank" rel="noopener noreferrer" class="card-link">
+                        Read Case Study <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
 
@@ -960,7 +991,7 @@
                             <span class="card-tag">Pegadaian Project 2</span>
                             <span class="card-year">2026</span>
                         </div>
-                        <h3>Project Name 2</h3>
+                        <h3 style="margin-bottom: 10px;">Project Name 2</h3>
                         <p>Short project description of requirement gathering, business rules, and technical solutions.</p>
                     </div>
                     <a href="#" class="card-link">
@@ -975,7 +1006,7 @@
                             <span class="card-tag">Pegadaian Project 3</span>
                             <span class="card-year">2026</span>
                         </div>
-                        <h3>Project Name 3</h3>
+                        <h3 style="margin-bottom: 10px;">Project Name 3</h3>
                         <p>Short project description of requirement gathering, business rules, and technical solutions.</p>
                     </div>
                     <a href="#" class="card-link">
@@ -990,7 +1021,7 @@
                             <span class="card-tag">Pegadaian Project 4</span>
                             <span class="card-year">2026</span>
                         </div>
-                        <h3>Project Name 4</h3>
+                        <h3 style="margin-bottom: 10px;">Project Name 4</h3>
                         <p>Short project description of requirement gathering, business rules, and technical solutions.</p>
                     </div>
                     <a href="#" class="card-link">
@@ -1001,7 +1032,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- 5. CONTACT SECTION -->
         <section>
             <h2>Contact</h2>
             <p>Email : adingrhoo@gmail.com</p>
