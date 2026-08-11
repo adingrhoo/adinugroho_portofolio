@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise API Integration & Data Mapping - Adi Nugroho Case Study</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .header-nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 20px 20px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .project-hero {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .meta-grid::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .meta-item h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .meta-item p {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .section-block { display: flex; flex-direction: column; gap: 16px; }
+
+        .section-block h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .check-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-muted);
+        }
+
+        .check-list li i { color: var(--primary-blue); font-size: 1.1rem; margin-top: 3px; }
+    </style>
+</head>
+
+<body>
+
+    <header class="header-nav">
+        <a href="../index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </header>
+
+    <section class="project-hero">
+        <div class="card-tag" style="margin-bottom: 16px; display: inline-block;">
+            <i class="fa-solid fa-network-wired"></i> Banking API & Integration Analysis
+        </div>
+        <h1 class="project-title">Enterprise Internal & External API Integration Analysis</h1>
+        <p class="project-subtitle">
+            End-to-end requirement analysis, API data mapping, technical specification drafting (TSD), and testing coordination for core banking integration touchpoints.
+        </p>
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h4>Organization</h4>
+                <p>Bank Danamon Indonesia</p>
+            </div>
+            <div class="meta-item">
+                <h4>Role</h4>
+                <p>Technical Business Analyst</p>
+            </div>
+            <div class="meta-item">
+                <h4>Focus Area</h4>
+                <p>API Analysis & Data Mapping</p>
+            </div>
+            <div class="meta-item">
+                <h4>Core Tech/Tools</h4>
+                <p>SQL, Postman, REST API, TSD</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="content-container">
+
+        <div class="section-block">
+            <h2><i class="fa-solid fa-circle-info" style="color: var(--primary-blue);"></i> Overview & Scope</h2>
+            <p>
+                Managed end-to-end technical analysis for enterprise integration initiatives involving internal banking microservices and external partner/vendor APIs. The core responsibility was bridging business requirements with technical execution by defining clear API contracts, request-response payload structures, and error-handling flows.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2><i class="fa-solid fa-user-gear" style="color: var(--primary-blue);"></i> Key Technical Responsibilities & Deliverables</h2>
+            <div class="accent-card">
+                <ul class="check-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Requirement Analysis & Integration Scenarios:</strong> Collaborated with business users and external partners to clarify functional expectations, define request/response data triggers, and map out integration touchpoints.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Database Analysis & Schema Verification:</strong> Explored and queried development databases (1:1 mirror environment) using SQL to verify data types, check field constraints, and ensure accurate payload mapping across systems.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Technical Specification Document (TSD):</strong> Authored detailed TSDs containing API endpoint structures, HTTP status codes, request-response JSON/XML schemas, and data transformation rules for developers.</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>API Testing Support & Release Coordination:</strong> Conducted functional API testing using Postman to validate payload accuracy, verify error response handling during SIT/UAT, and assist in production deployment releases.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <h2><i class="fa-solid fa-microchip" style="color: var(--primary-blue);"></i> Skills & Tools Applied</h2>
+            <div class="tools-tags">
+                <span class="tool-tag">API Specification Document</span>
+                <span class="tool-tag">Technical Specification Document (TSD)</span>
+                <span class="tool-tag">SQL Database Analysis</span>
+                <span class="tool-tag">Payload Data Mapping</span>
+                <span class="tool-tag">Postman API Testing</span>
+                <span class="tool-tag">API Error Handling Rules</span>
+                <span class="tool-tag">SIT / UAT Support & Release</span>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Case Study Built & Documented by Adi Nugroho — Technical Business Analyst</p>
+    </footer>
+
+</body>
+
+</html>
