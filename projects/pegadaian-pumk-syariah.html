@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUMK Syariah Working Capital Flow Enhancement - Portfolio</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="PUMK Syariah Working Capital Flow Enhancement">
+    <meta name="description" content="Case study on system requirement analysis and business process re-engineering for Islamic working capital application at PT Pegadaian.">
+
+    <!-- Open Graph / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adingrhoo.github.io/adinugroho_portofolio/projects/pegadaian-pumk-syariah.html">
+    <meta property="og:title" content="PUMK Syariah Working Capital Flow Enhancement">
+    <meta property="og:description" content="Case study on system requirement analysis and business process re-engineering for Islamic working capital application at PT Pegadaian.">
+    <meta property="og:image" content="https://adingrhoo.github.io/adinugroho_portofolio/assets/img/banner/banner.jpg">
+
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Terpisah -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Embedded CSS pengunci tampilan presisi BCMS -->
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .badge-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #eff6ff;
+            color: #2563eb;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .project-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.25;
+            margin: 0 0 16px 0;
+        }
+
+        .project-subtitle {
+            font-size: 1.05rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        /* Metadata Box 4 Kolom */
+        .meta-box-container {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-top: 3px solid #2563eb;
+            border-radius: 12px;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .meta-box-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .meta-box-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .meta-item-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .meta-item-value {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.4;
+            display: block;
+        }
+
+        /* Section Styling */
+        .section-block {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title i {
+            color: #2563eb;
+        }
+
+        .section-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #334155;
+            margin: 0;
+        }
+
+        /* Card Container dengan Blue Top Border */
+        .blue-card-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-top: 3px solid #2563eb;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* List Tanpa Bullet dengan Icon Centang Biru */
+        .check-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #334155;
+            list-style: none !important;
+        }
+
+        .check-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .check-list li i {
+            color: #2563eb;
+            font-size: 1.15rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* Grid Workflow As-Is vs To-Be */
+        .workflow-grid-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 640px) {
+            .workflow-grid-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .workflow-card-asis {
+            background-color: #fef2f2;
+            border: 1px solid #fee2e2;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .workflow-card-asis h3 {
+            color: #dc2626;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .workflow-card-tobe {
+            background-color: #f0fdf4;
+            border: 1px solid #dcfce7;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .workflow-card-tobe h3 {
+            color: #16a34a;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .workflow-card-asis p, .workflow-card-tobe p {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Skills Pill Tags */
+        .skills-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-pill-tag {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        /* Bottom Button */
+        .bottom-nav-container {
+            margin-top: 48px;
+            margin-bottom: 24px;
+        }
+
+        .btn-bottom-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #1e293b;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-bottom-back:hover {
+            background-color: #f8fafc;
+            border-color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <!-- Back Link Top -->
+        <a href="../index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <!-- Project Header -->
+        <header>
+            <div class="badge-category">
+                <i class="fa-solid fa-coins"></i> ISLAMIC MICROFINANCE / PROCESS RE-ENGINEERING
+            </div>
+            <h1 class="project-title">PUMK Syariah Working Capital Flow Enhancement</h1>
+            <p class="project-subtitle">Streamlining working capital application workflows, integrating multi-BUMN fund allocations, and updating approval authority matrix based on new SOTK governance at PT Pegadaian.</p>
+        </header>
+
+        <!-- Metadata 4-Column Box -->
+        <div class="meta-box-container">
+            <div>
+                <span class="meta-item-label">ORGANIZATION</span>
+                <span class="meta-item-value">PT Pegadaian</span>
+            </div>
+            <div>
+                <span class="meta-item-label">ROLE</span>
+                <span class="meta-item-value">IT Business Analyst</span>
+            </div>
+            <div>
+                <span class="meta-item-label">REGULATORY TARGET</span>
+                <span class="meta-item-value">BUMN Circular & SAK EP Compliance</span>
+            </div>
+            <div>
+                <span class="meta-item-label">IMPACT SCOPE</span>
+                <span class="meta-item-value">Multi-Tier Network (HQ, Regional, & Outlets)</span>
+            </div>
+        </div>
+
+        <!-- 1. Executive Overview & Background -->
+        <section class="section-block">
+            <h2 class="section-title">
+                <i class="fa-solid fa-circle-info"></i> Executive Overview & Background
+            </h2>
+            <p class="section-text">
+                Developing and expanding the PUMK Syariah (Islamic Micro and Small Business Funding) Working Capital Module at PT Pegadaian aims to accelerate operational workflows for partner business funding requests[cite: 1]. This initiative restructures multi-tier funding allocations while enforcing financial compliance under BUMN Circular Letters and updated SAK EP accounting standards[cite: 1].
+            </p>
+        </section>
+
+        <!-- 2. Key Business Objectives -->
+        <section class="section-block">
+            <h2 class="section-title">
+                <i class="fa-solid fa-bullseye"></i> Key Business Objectives
+            </h2>
+            <div class="blue-card-box">
+                <ul class="check-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>SLA Turnaround Acceleration:</strong> Eliminate manual bureaucracy and physical document dependencies, cutting turnaround time from 2–3 business days down to rapid digital processing[cite: 1].</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Accounting Compliance (SAK EP):</strong> Transition financial reporting standards from SAK ETAP to SAK EP and establish full audit transparency for multi-BUMN fund sources[cite: 1].</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>New SOTK Approval Alignment:</strong> Reconfigure loan approval tiering matrix in compliance with updated organizational governance structure (SOTK)[cite: 1].</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Financial Journal Automation:</strong> Ensure automated, error-free accounting journal generation across fund allocation, dropping, disbursement, and early settlement[cite: 1].</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. Process Re-Engineering (As-Is vs To-Be) -->
+        <section class="section-block">
+            <h2 class="section-title">
+                <i class="fa-solid fa-diagram-project"></i> Process Re-Engineering (As-Is vs To-Be)
+            </h2>
+            <div class="workflow-grid-box">
+                <div class="workflow-card-asis">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> As-Is Workflow (Legacy)</h3>
+                    <p>Working capital application and fund source flagging were bundled into manual per-transaction requests via e-office[cite: 1]. Requires extensive multi-unit physical file routing with 2–3 days SLA turnaround[cite: 1].</p>
+                </div>
+                <div class="workflow-card-tobe">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> To-Be Workflow (Target)</h3>
+                    <p>Decoupled BUMN Mapping menu and multi-tier Fund Allocation (HQ &rarr; Regional &rarr; Branch)[cite: 1]. Features automated journal simulations, SSO integration, and rapid branch disbursement clearance[cite: 1].</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. My Role & Technical BA Deliverables -->
+        <section class="section-block">
+            <h2 class="section-title">
+                <i class="fa-solid fa-user-gear"></i> My Role & Technical BA Deliverables
+            </h2>
+            <div class="blue-card-box">
+                <ul class="check-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Business Requirement Document (BRD) Compilation:</strong> Translated business needs into structured functional specifications, including UI mockup rearrangement and navigation logic[cite: 1].</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>BUMN Mapping & Flagging Rules:</strong> Formulated functional specifications for mapping multi-BUMN funding sources per unit, locking automated journaling across cash and manual entries[cite: 1].</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>SOTK Approval Matrix Configuration:</strong> Re-architected loan approval thresholds (Assistant Manager for IDR 1M–20M and Business Manager for > IDR 20M)[cite: 1].</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Journal Logic & SSO Validation:</strong> Designed automated accounting simulation flows (dropping, disbursement, early settlement) and specified integrated SSO authentication logic[cite: 1].</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. Skills & Methods Applied -->
+        <section class="section-block">
+            <h2 class="section-title">
+                <i class="fa-solid fa-microchip"></i> Skills & Methods Applied
+            </h2>
+            <div class="skills-flex-container">
+                <span class="skill-pill-tag">Business Requirement Document (BRD)</span>
+                <span class="skill-pill-tag">Business Process Re-Engineering</span>
+                <span class="skill-pill-tag">SAK EP & Financial Journal Logic</span>
+                <span class="skill-pill-tag">Multi-Tier Approval Matrix</span>
+                <span class="skill-pill-tag">Single Sign-On (SSO) Integration</span>
+                <span class="skill-pill-tag">Agile / Scrum Collaboration</span>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav-container">
+            <a href="../index.html" class="btn-bottom-back">
+                <i class="fa-solid fa-arrow-left"></i> Back to Main Portfolio
+            </a>
+        </div>
+
+    </main>
+
+</body>
+</html>
