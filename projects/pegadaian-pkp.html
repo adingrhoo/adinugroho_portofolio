@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passion PKP - Corporate Loss Recovery & Management System - Portfolio</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Passion PKP - Corporate Loss Recovery & Management System">
+    <meta name="description" content="Case study on system requirement analysis for corporate loss tracking, automated financial journaling, and recovery management at PT Pegadaian.">
+
+    <!-- Open Graph / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adingrhoo.github.io/adinugroho_portofolio/projects/pegadaian-pkp.html">
+    <meta property="og:title" content="Passion PKP - Corporate Loss Recovery & Management System">
+    <meta property="og:description" content="Case study on system requirement analysis for corporate loss tracking, automated financial journaling, and recovery management at PT Pegadaian.">
+    <meta property="og:image" content="https://adingrhoo.github.io/adinugroho_portofolio/assets/img/banner/banner.jpg">
+
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Terpisah -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Embedded CSS pengunci tampilan presisi Master Format -->
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .badge-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #eff6ff;
+            color: #2563eb;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .project-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.25;
+            margin: 0 0 16px 0;
+        }
+
+        .project-subtitle {
+            font-size: 1.05rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        /* Metadata Box 4 Kolom */
+        .meta-box-container {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-top: 3px solid #2563eb;
+            border-radius: 12px;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .meta-box-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .meta-box-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .meta-item-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .meta-item-value {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.4;
+            display: block;
+        }
+
+        /* Section Styling */
+        .section-block {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-title i {
+            color: #2563eb;
+        }
+
+        .section-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #334155;
+            margin: 0;
+        }
+
+        /* Card Container dengan Blue Top Border */
+        .blue-card-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-top: 3px solid #2563eb;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* List Tanpa Bullet dengan Icon Centang Biru */
+        .check-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #334155;
+            list-style: none !important;
+        }
+
+        .check-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .check-list li i {
+            color: #2563eb;
+            font-size: 1.15rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* Grid Workflow As-Is vs To-Be */
+        .workflow-grid-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 640px) {
+            .workflow-grid-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .workflow-card-asis {
+            background-color: #fef2f2;
+            border: 1px solid #fee2e2;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .workflow-card-asis h3 {
+            color: #dc2626;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .workflow-card-tobe {
+            background-color: #f0fdf4;
+            border: 1px solid #dcfce7;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .workflow-card-tobe h3 {
+            color: #16a34a;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .workflow-card-asis p, .workflow-card-tobe p {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Skills Pill Tags */
+        .skills-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-pill-tag {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        /* Bottom Button */
+        .bottom-nav-container {
+            margin-top: 48px;
+            margin-bottom: 24px;
+        }
+
+        .btn-bottom-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #1e293b;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-bottom-back:hover {
+            background-color: #f8fafc;
+            border-color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <!-- Back Link Top -->
+        <a href="../index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <!-- Project Header -->
+        <header>
+            <div class="badge-category">
+                <i class="fa-solid fa-shield-halved"></i> ENTERPRISE RISK / LOSS RECOVERY MANAGEMENT
+            </div>
+            <h1 class="project-title">Passion PKP - Corporate Loss Recovery & Management System</h1>
+            <p class="project-subtitle">Systematizing corporate financial loss recording, automating General Ledger journal posting, and enforcing dual-tier validation for KCA pawn product losses under Board Regulation No. 48/2024 at PT Pegadaian.</p>
+        </header>
+
+        <!-- Metadata 4-Column Box -->
+        <div class="meta-box-container">
+            <div>
+                <span class="meta-item-label">ORGANIZATION</span>
+                <span class="meta-item-value">PT Pegadaian</span>
+            </div>
+            <div>
+                <span class="meta-item-label">ROLE</span>
+                <span class="meta-item-value">IT Business Analyst</span>
+            </div>
+            <div>
+                <span class="meta-item-label">REGULATORY TARGET</span>
+                <span class="meta-item-value">Perdir No. 48/2024 & GCG Compliance</span>
+            </div>
+            <div>
+                <span class="meta-item-label">IMPACT SCOPE</span>
+                <span class="meta-item-value">Nationwide Network (HQ, Regional, & Branch Outlets)</span>
+            </div>
+        </div>
+
+        <!-- 1. Executive Overview & Background -->
+        <section class="section-block">
+            <h2 class="section-title">
+                <i class="fa-solid fa-circle-info"></i> Executive Overview & Background
+            </h2>
+            <p class="section-text">
+                Developing the Penanganan Kerugian Perusahaan (PKP) module on the Passion core application establishes an integrated digital framework for recording, reporting, handling, and monitoring financial losses at PT Pegadaian[cite: 2]. Driven by Board Regulation No. 48/2024, this initiative automates loss recovery tracking resulting from Unlawful Acts (PMH) or Breach of Contract (Wanprestasi) to uphold Good Corporate Governance (GCG) principles[cite: 2].
+            </p>
+        </section>
+
+        <!-- 2. Key Business Objectives -->
+        <section class="section-block">
+            <h2 class="section-title">
+                <i class="fa-solid fa-bullseye"></i> Key Business Objectives
+            </h2>
+            <div class="blue-card-box">
+                <ul class="check-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Automated Cut-Off & Reclassification:</strong> Halt interest accruals (sewa modal/mu'nah) automatically and reclassify non-performing loans (PYD) into loss accounts (KPYD) upon internal audit findings (LHPP)[cite: 2].</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Legal Instrument Integration:</strong> Digitally capture Absolute Responsibility Statements (SKTM) for unlawful acts and Written Loss Statements (SPBJ) for defaults, linked with asset collateral mapping[cite: 2].</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Batch Time-out Prevention:</strong> Re-engineer bulk journaling routines into single Decree (SK) executions with pre-execution simulation previews to eliminate system timeouts in GL posting[cite: 2].</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Dual-Tier Validation & Recovery Tracking:</strong> Enforce strict governance between Branch Managers (Pinca) and Regional Deputy Directors (Deputy Bisnis) while tracking recovery channels (salary deductions, auctions, voluntary cash deposits)[cite: 2].</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. Process Re-Engineering (As-Is vs To-Be) -->
+        <section class="section-block">
+            <h2 class="section-title">
+                <i class="fa-solid fa-diagram-project"></i> Process Re-Engineering (As-Is vs To-Be)
+            </h2>
+            <div class="workflow-grid-box">
+                <div class="workflow-card-asis">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> As-Is Workflow (Legacy)</h3>
+                    <p>Loss handling relied on fragmented manual reports and unintegrated offline document transfers[cite: 2]. Bulk GL journal posting caused frequent system timeouts, while recovery tracking lacked real-time visibility across branch networks[cite: 2].</p>
+                </div>
+                <div class="workflow-card-tobe">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> To-Be Workflow (Target)</h3>
+                    <p>Fully digital PKP workflow in Passion core app featuring automated cut-off journaling, digital SKTM/SPBJ generation, per-SK journal simulation, dual approval controls, and multi-channel recovery tracking[cite: 2].</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. My Role & Technical BA Deliverables -->
+        <section class="section-block">
+            <h2 class="section-title">
+                <i class="fa-solid fa-user-gear"></i> My Role & Technical BA Deliverables
+            </h2>
+            <div class="blue-card-box">
+                <ul class="check-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Business Requirement Document (BRD) Compilation:</strong> Formulated end-to-end functional requirements for Phase 3 PKP module on Passion system covering Cut-Off, SKTM/SPBJ, Loss Imposition, and Reporting[cite: 2].</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>User Access Matrix (UAM) Specification:</strong> Architected strict role permissions defining Branch Manager actions (input, detail costs, journal execution) vs Deputy Business authority (credit list validation, SK approval, and loss deletion).</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Accounting Journal & Simulation Logic:</strong> Engineered automated GL journal posting rules for auction deficits and TGR receivable creation, complete with pre-commit "Simulation Journal" validation.</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div><strong>Recovery Mechanism & De-registration Workflows:</strong> Designed multi-channel recovery algorithms (payroll deduction, cash setoran, auction proceeds) and TGR deletion logic for credit re-settlement clearance.</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. Skills & Methods Applied -->
+        <section class="section-block">
+            <h2 class="section-title">
+                <i class="fa-solid fa-microchip"></i> Skills & Methods Applied
+            </h2>
+            <div class="skills-flex-container">
+                <span class="skill-pill-tag">Business Requirement Document (BRD)</span>
+                <span class="skill-pill-tag">Corporate Loss Recovery (TGR)</span>
+                <span class="skill-pill-tag">Financial Journal Logic & GL Posting</span>
+                <span class="skill-pill-tag">User Access Matrix (UAM)</span>
+                <span class="skill-pill-tag">Audit & GCG Compliance</span>
+                <span class="skill-pill-tag">Agile / Scrum Collaboration</span>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav-container">
+            <a href="../index.html" class="btn-bottom-back">
+                <i class="fa-solid fa-arrow-left"></i> Back to Main Portfolio
+            </a>
+        </div>
+
+    </main>
+
+</body>
+</html>
