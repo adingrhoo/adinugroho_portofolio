@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMA System - Case Study | IT Business Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --hover-blue: #1d4ed8;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --badge-bg: #eff6ff;
+            --border-color: #e2e8f0;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background-color: #ffffff; line-height: 1.6; }
+
+        .header-nav { border-bottom: 1px solid var(--border-color); background: #ffffff; position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1100px; margin: 0 auto; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-blue); text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+
+        .case-study-container { max-width: 1000px; margin: 0 auto; padding: 40px 20px 80px 20px; }
+
+        .cs-category-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--badge-bg);
+            color: var(--primary-blue);
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 8px 16px;
+            border-radius: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .cs-title { font-size: 2.4rem; font-weight: 800; color: var(--text-dark); line-height: 1.25; margin-bottom: 16px; }
+        .cs-subtitle { font-size: 1.1rem; color: var(--text-muted); font-weight: 500; margin-bottom: 32px; }
+
+        /* Meta Box */
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+        .meta-item { display: flex; flex-direction: column; gap: 4px; }
+        .meta-label { font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .meta-value { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); }
+
+        /* Sections & Headings */
+        .cs-section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+        .section-title i { color: var(--primary-blue); }
+
+        /* Objectives Card */
+        .objectives-card {
+            background: #ffffff;
+            border: 1.5px solid var(--primary-blue);
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 16px;
+        }
+        .bullet-list-blue { list-style: none; }
+        .bullet-list-blue li { position: relative; padding-left: 32px; margin-bottom: 16px; font-size: 0.98rem; color: var(--text-dark); }
+        .bullet-list-blue li:last-child { margin-bottom: 0; }
+        .bullet-list-blue li i { position: absolute; left: 0; top: 3px; color: var(--primary-blue); font-size: 1.1rem; }
+
+        /* As-Is vs To-Be Cards */
+        .as-is-to-be-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+        .as-is-card { background-color: #fef2f2; border: 1px solid #fecaca; border-radius: 12px; padding: 24px; }
+        .to-be-card { background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 24px; }
+        .card-header-status { font-weight: 800; font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .as-is-card .card-header-status { color: #dc2626; }
+        .to-be-card .card-header-status { color: #16a34a; }
+
+        /* Solution Grid */
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .feature-card { background: #ffffff; border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; box-shadow: var(--card-shadow); }
+        .feature-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; }
+        .feature-card p { font-size: 0.92rem; color: var(--text-muted); }
+
+        /* Workflow Box */
+        .flow-box { background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin: 16px 0; }
+        .flow-steps { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; }
+        .flow-step { background: #ffffff; border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; text-align: center; font-size: 0.85rem; font-weight: 700; flex: 1; }
+
+        /* Impact Grid */
+        .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+        .stat-card { background: #ffffff; border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; text-align: center; box-shadow: var(--card-shadow); }
+        .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--primary-blue); }
+        .stat-desc { font-size: 0.88rem; font-weight: 700; color: var(--text-muted); margin-top: 4px; }
+
+        /* Skills Badges */
+        .skills-flex { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+        .skill-btn { background: var(--bg-light); border: 1px solid var(--border-color); padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; color: var(--text-dark); }
+
+        .back-btn-container { margin-top: 40px; }
+        .btn-outline-back { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border-color); padding: 10px 20px; border-radius: 8px; color: var(--text-dark); text-decoration: none; font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .meta-grid { grid-template-columns: 1fr 1fr; }
+            .as-is-to-be-grid { grid-template-columns: 1fr; }
+            .flow-steps { flex-direction: column; }
+            .impact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+    </header>
+
+    <main class="case-study-container">
+        
+        <!-- Category Badge -->
+        <div class="cs-category-badge">
+            <i class="fas fa-users-cog"></i> MEMBERSHIP & ENTERPRISE MOBILE ECOSYSTEM
+        </div>
+
+        <!-- Title & Subtitle -->
+        <h1 class="cs-title">Indonesia Marketing Association (IMA)<br>Nationwide Membership & Multi-Chapter System</h1>
+        <p class="cs-subtitle">Transformed manual Excel-based member tracking into a unified multi-chapter Web Dashboard & Cross-Platform Mobile Application (iOS & Android) featuring automated branch approvals, mutation workflows, and real-time event sync.</p>
+
+        <!-- Meta Grid -->
+        <div class="meta-grid">
+            <div class="meta-item">
+                <span class="meta-label">ORGANIZATION</span>
+                <span class="meta-value">Indonesia Marketing Association (IMA)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">ROLE</span>
+                <span class="meta-value">IT Consultant / Solo Business Analyst</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">CONSULTANCY</span>
+                <span class="meta-value">PT. Prawathiya Karsa Pradiptha</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">IMPACT SCOPE</span>
+                <span class="meta-value">Nationwide Chapters (Bogor, Jakarta, Bandung, etc.)</span>
+            </div>
+        </div>
+
+        <!-- Executive Overview & Background -->
+        <section class="cs-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> Executive Overview & Background</h2>
+            <p>Indonesia Marketing Association (IMA) is a national organization governing thousands of marketing professionals across regional chapters throughout Indonesia. Prior to this greenfield initiative, membership operations, registrations, active status validations, and event distributions were managed entirely through fragmented, manual spreadsheet processes across individual chapter leaderships.</p>
+        </section>
+
+        <!-- Key Business Objectives -->
+        <section class="cs-section">
+            <h2 class="section-title"><i class="fas fa-bullseye"></i> Key Business Objectives</h2>
+            <div class="objectives-card">
+                <ul class="bullet-list-blue">
+                    <li><i class="fas fa-check-circle"></i> <strong>Centralized Digital Registration:</strong> Replace manual Excel tracking with a self-service Mobile Application (App Store & Play Store) for direct applicant onboardings.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Multi-Chapter Decentralized Approval:</strong> Route member applications automatically to respective regional chapter leads (e.g., Bogor, Jakarta) for localized verification.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Inter-Chapter Member Mutation Workflow:</strong> Establish formal request and dual-approval mechanisms when members transfer between regional chapters.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Real-Time Event & Article Sync:</strong> Enable Central & Chapter Admins to publish promotional event banners on the Web Dashboard that instantaneously sync to mobile feeds.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Process Re-Engineering (As-Is vs To-Be) -->
+        <section class="cs-section">
+            <h2 class="section-title"><i class="fas fa-random"></i> Process Re-Engineering (As-Is vs To-Be)</h2>
+            <div class="as-is-to-be-grid">
+                <div class="as-is-card">
+                    <div class="card-header-status"><i class="fas fa-exclamation-triangle"></i> As-Is Workflow (Legacy)</div>
+                    <p style="font-size: 0.92rem; color: #7f1d1d;">Manual spreadsheet management per chapter, uncoordinated registration approvals via physical messaging, lost membership histories during relocation, and unstandardized event announcements via chat groups.</p>
+                </div>
+                <div class="to-be-card">
+                    <div class="card-header-status"><i class="fas fa-magic"></i> To-Be Workflow (Target)</div>
+                    <p style="font-size: 0.92rem; color: #14532d;">Unified Web & Mobile ecosystem with auto-routed regional approvals, transparent dual-check mutation workflows, centralized relational DB, and instant cross-platform banner notifications.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Solution & Scope -->
+        <section class="cs-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> System Solution & Scope</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Cross-Platform Mobile App</h3>
+                    <p>Allows prospective members to apply directly, receive approval notifications, access articles, and request chapter transfers from iOS & Android devices.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Web Admin Dashboard</h3>
+                    <p>Centralized portal for Chapter Leads and Super Admins to review applications, toggle active/inactive statuses, publish articles, and host events.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multi-Chapter Hierarchy</h3>
+                    <p>Structured data partitioning ensuring regional chapter heads (e.g., Bogor) strictly access and manage applicants within their designated jurisdiction.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Real-Time Banner Sync</h3>
+                    <p>Automated integration pushing event updates created on the Web Dashboard directly to member mobile app home banners.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Process Workflows -->
+        <section class="cs-section">
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> Key Process Workflows</h2>
+            
+            <div class="flow-box">
+                <strong style="font-size: 0.95rem;">1. Registration & Decentralized Approval Flow</strong>
+                <div class="flow-steps">
+                    <div class="flow-step">1. Mobile App Download & Registration</div>
+                    <i class="fas fa-chevron-right" style="color: var(--primary-blue);"></i>
+                    <div class="flow-step">2. Select Chapter (e.g. Bogor)</div>
+                    <i class="fas fa-chevron-right" style="color: var(--primary-blue);"></i>
+                    <div class="flow-step">3. Auto-route to Chapter Lead Inbox</div>
+                    <i class="fas fa-chevron-right" style="color: var(--primary-blue);"></i>
+                    <div class="flow-step">4. Review & Approval Decision</div>
+                </div>
+            </div>
+
+            <div class="flow-box">
+                <strong style="font-size: 0.95rem;">2. Inter-Chapter Mutation Workflow</strong>
+                <div class="flow-steps">
+                    <div class="flow-step">1. Member Requests Transfer in App</div>
+                    <i class="fas fa-chevron-right" style="color: var(--primary-blue);"></i>
+                    <div class="flow-step">2. Approval from Current Chapter</div>
+                    <i class="fas fa-chevron-right" style="color: var(--primary-blue);"></i>
+                    <div class="flow-step">3. Acceptance from Target Chapter</div>
+                    <i class="fas fa-chevron-right" style="color: var(--primary-blue);"></i>
+                    <div class="flow-step">4. Automated DB Chapter Transfer</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Role & Technical BA Deliverables -->
+        <section class="cs-section">
+            <h2 class="section-title"><i class="fas fa-user-check"></i> My Role & Technical BA Deliverables</h2>
+            <div class="objectives-card">
+                <ul class="bullet-list-blue">
+                    <li><i class="fas fa-check-circle"></i> <strong>Requirement Engineering (BRD & FSD):</strong> Elicited business needs from zero and authored comprehensive specifications without prior client documentation.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Process Modeling & Wireframing:</strong> Designed multi-chapter BPMN workflows and high-fidelity wireframes for both Web Admin Portal and Mobile UX.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Database Schema Design Collaboration:</strong> Partnered with engineering teams to define entity-relationship models for multi-tenant chapter permissions, event logs, and mutation audits.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Testing & End-to-End UAT Leadership:</strong> Directed internal QA SIT cycles and <strong>personally led UAT sessions directly with regional Chapter Leads (Bogor, Jakarta, etc.)</strong> to secure final production sign-off.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Impact & Business Results -->
+        <section class="cs-section">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> Impact & Business Results</h2>
+            <div class="impact-grid">
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-desc">Spreadsheet Elimination for Member Tracking</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Real-Time</div>
+                    <div class="stat-desc">Cross-Platform Web-to-Mobile Event Sync</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Automated</div>
+                    <div class="stat-desc">Regional Approval & Mutation Governance</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Methods Applied -->
+        <section class="cs-section">
+            <h2 class="section-title"><i class="fas fa-microchip"></i> Skills & Methods Applied</h2>
+            <div class="skills-flex">
+                <div class="skill-btn">Business Requirement Document (BRD)</div>
+                <div class="skill-btn">Functional Specification Document (FSD)</div>
+                <div class="skill-btn">BPMN Process Mapping</div>
+                <div class="skill-btn">Greenfield Systems Design</div>
+                <div class="skill-btn">Multi-Chapter Hierarchy Architecture</div>
+                <div class="skill-btn">UAT Execution & Leadership</div>
+                <div class="skill-btn">Database Schema Design</div>
+                <div class="skill-btn">Cross-Platform Sync (Web & Mobile)</div>
+            </div>
+        </section>
+
+        <!-- Back Button Bottom -->
+        <div class="back-btn-container">
+            <a href="../index.html" class="btn-outline-back"><i class="fas fa-arrow-left"></i> Back to Main Portfolio</a>
+        </div>
+
+    </main>
+
+</body>
+</html>
