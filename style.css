@@ -31,16 +31,16 @@ html, body {
 }
 
 /* ===========================
-   HERO SECTION (LAYOUT UTAMA)
+   HERO SECTION (LAYOUT UTAMA - DIREKATKAN JARAKNYA)
 =========================== */
 .hero-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
+    min-height: 85vh; /* Dikurangi dari 100vh agar jarak ke section bawah lebih rapat */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px 20px 40px 20px;
     border-bottom: 1px solid var(--border-color);
     background-color: #ffffff;
 }
@@ -53,7 +53,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 24px;
+    gap: 20px;
 }
 
 .top-nav {
@@ -93,7 +93,7 @@ html, body {
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.8px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .role-badge .dot {
@@ -116,7 +116,7 @@ html, body {
     font-size: 2.8rem;
     font-weight: 800;
     color: var(--primary-blue);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     position: relative;
     display: inline-block;
 }
@@ -133,21 +133,21 @@ html, body {
 }
 
 .description {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-muted);
     line-height: 1.6;
-    margin-top: 28px;
-    margin-bottom: 36px;
+    margin-top: 24px;
+    margin-bottom: 28px;
     font-weight: 500;
 }
 
-.cta-buttons { display: flex; gap: 16px; margin-bottom: 48px; }
+.cta-buttons { display: flex; gap: 16px; margin-bottom: 36px; }
 
 .btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 16px 32px;
+    padding: 14px 28px;
     border-radius: 12px;
     font-weight: 700;
     font-size: 1rem;
@@ -187,7 +187,7 @@ html, body {
     gap: 10px;
     background-color: var(--bg-light);
     border: 1px solid var(--border-color);
-    padding: 12px 20px;
+    padding: 10px 18px;
     border-radius: 16px;
     font-size: 0.9rem;
     font-weight: 700;
@@ -203,16 +203,16 @@ html, body {
     color: var(--text-muted);
     font-size: 0.9rem;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 /* =========================================================
-   SISI KANAN (LAYER 3D YANG SEIMBANG & TIDAK BENTROK)
+   SISI KANAN (VEKTOR LEBIH CERAH & POSISI MOBILE APP DITURUNKAN)
 ========================================================= */
 .hero-right {
     flex: 1;
     max-width: 50%;
-    height: 600px;
+    height: 560px; /* Disesuaikan agar lebih padat */
     position: relative;
     background-color: transparent;
     display: flex;
@@ -221,15 +221,15 @@ html, body {
     overflow: visible;
 }
 
-/* LAYER 1: VEKTOR LATAR BELAKANG (Z-Index Rendah, Di Belakang Foto) */
+/* LAYER 1: VEKTOR LATAR BELAKANG (Opacity dinaikkan jadi 0.55 agar lebih cerah) */
 .bg-vector {
     position: absolute;
     background: transparent;
     border: none;
     box-shadow: none;
-    color: #94a3b8;
+    color: #64748b;
     z-index: 1;
-    opacity: 0.3;
+    opacity: 0.55; 
     pointer-events: none;
 }
 
@@ -237,7 +237,7 @@ html, body {
     font-size: 0.6rem;
     font-weight: 800;
     letter-spacing: 0.8px;
-    color: #64748b;
+    color: #475569;
     margin-bottom: 4px;
     text-transform: uppercase;
     display: flex;
@@ -256,31 +256,32 @@ html, body {
     width: 100%;
     height: 25px;
     background: transparent;
-    border-left: 2px solid #cbd5e1;
-    border-bottom: 2px solid #cbd5e1;
+    border-left: 2px solid #94a3b8;
+    border-bottom: 2px solid #94a3b8;
 }
 
-.dash-svg-chart { width: 100%; height: 100%; overflow: visible; opacity: 0.6; }
+.dash-svg-chart { width: 100%; height: 100%; overflow: visible; opacity: 0.8; }
 
 .vec-process { top: 20px; right: 10px; width: 140px; }
 .bpmn-diagram { display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-top: 4px; }
 .bpmn-node { display: flex; align-items: center; justify-content: center; }
-.bpmn-start { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #94a3b8; }
-.bpmn-task { padding: 2px 4px; border: 1px solid #94a3b8; border-radius: 3px; font-size: 0.45rem; font-weight: 800; }
-.bpmn-gateway { width: 10px; height: 10px; border: 2px solid #94a3b8; transform: rotate(45deg); }
-.bpmn-end { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #94a3b8; }
-.bpmn-arrow { width: 6px; height: 2px; background: #cbd5e1; position: relative; }
-.bpmn-arrow::after { content: ''; position: absolute; right: 0; top: -3px; border: solid #cbd5e1; border-width: 0 2px 2px 0; display: inline-block; padding: 2px; transform: rotate(-45deg); }
+.bpmn-start { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #64748b; }
+.bpmn-task { padding: 2px 4px; border: 1px solid #64748b; border-radius: 3px; font-size: 0.45rem; font-weight: 800; }
+.bpmn-gateway { width: 10px; height: 10px; border: 2px solid #64748b; transform: rotate(45deg); }
+.bpmn-end { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #64748b; }
+.bpmn-arrow { width: 6px; height: 2px; background: #94a3b8; position: relative; }
+.bpmn-arrow::after { content: ''; position: absolute; right: 0; top: -3px; border: solid #94a3b8; border-width: 0 2px 2px 0; display: inline-block; padding: 2px; transform: rotate(-45deg); }
 
-.vec-mobile { bottom: 100px; left: 0px; width: 110px; }
+/* Vektor Mobile App diturunkan posisinya (bottom dikurangi) agar keluar dari area tangan */
+.vec-mobile { bottom: 40px; left: -10px; width: 110px; }
 .mobile-interface { display: flex; flex-direction: column; gap: 4px; }
 .app-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
-.app-icon-item { aspect-ratio: 1; border-radius: 3px; background: #cbd5e1; }
-.mobile-bar-sim { height: 3px; width: 100%; background: #cbd5e1; border-radius: 2px; }
+.app-icon-item { aspect-ratio: 1; border-radius: 3px; background: #94a3b8; }
+.mobile-bar-sim { height: 3px; width: 100%; background: #94a3b8; border-radius: 2px; }
 
-.vec-api { bottom: 60px; right: 10px; width: 90px; }
+.vec-api { bottom: 40px; right: 10px; width: 90px; }
 
-/* LAYER 2: FOTO UTAMA (Z-Index 2, Di Tengah) */
+/* LAYER 2: FOTO UTAMA */
 .character-img {
     height: 100%;
     width: auto;
@@ -291,7 +292,7 @@ html, body {
     filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.08));
 }
 
-/* LAYER 3: KARTU MELAYANG (Z-Index 3, Terluar dan Tidak Menutupi Vektor/Wajah) */
+/* LAYER 3: KARTU MELAYANG */
 .floating-card {
     position: absolute;
     background: #ffffff;
@@ -346,10 +347,10 @@ html, body {
 .floating-card ul li:last-child { margin-bottom: 0; }
 .floating-card ul li i { color: var(--primary-blue); font-size: 0.7rem; margin-top: 3px; }
 
-/* Koordinat Kartu Presisi (Dilebarkan ke luar agar tidak menabrak elemen lain) */
-.card-focus      { top: 80px; right: 0px; }
-.card-experience { top: 250px; left: -40px; }
-.card-exploring  { bottom: 50px; right: -20px; }
+/* Koordinat Kartu Melayang */
+.card-focus      { top: 70px; right: 0px; }
+.card-experience { top: 220px; left: -40px; }
+.card-exploring  { bottom: 40px; right: -20px; }
 
 
 /* ===========================
@@ -358,10 +359,10 @@ html, body {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 50px 20px; /* Dirapatkan jarak atasnya */
 }
 
-section { margin-bottom: 70px; }
+section { margin-bottom: 50px; } /* Dirapatkan jarak antar section */
 section h2 {
     font-size: 2rem;
     font-weight: 800;
@@ -558,7 +559,7 @@ footer {
     color: #94a3b8;
     text-align: center;
     padding: 40px 20px;
-    margin-top: 60px;
+    margin-top: 40px;
     font-size: 0.9rem;
     width: 100%;
 }
