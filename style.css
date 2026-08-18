@@ -9,7 +9,7 @@
     --bg-light: #f8fafc;
     --badge-bg: #eff6ff;
     --border-color: #e2e8f0;
-    --card-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.08);
     --gradient-accent: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
 }
 
@@ -35,9 +35,9 @@ html, body {
 =========================== */
 .hero-section {
     display: flex;
-    align-items: center; /* Kunci vertikal di tengah */
+    align-items: center;
     justify-content: space-between;
-    min-height: 100vh; /* Memenuhi tinggi layar */
+    min-height: 100vh;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -49,7 +49,7 @@ html, body {
 .hero-left {
     flex: 1;
     max-width: 50%;
-    padding-right: 40px; /* Jarak antara teks dan gambar */
+    padding-right: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -207,33 +207,21 @@ html, body {
 }
 
 /* =========================================================
-   SISI KANAN (KANVAS FOTO & KARTU DIKUNCI 600px)
+   SISI KANAN (LAYER 3D YANG SEIMBANG & TIDAK BENTROK)
 ========================================================= */
 .hero-right {
     flex: 1;
     max-width: 50%;
-    height: 600px; /* Kunci tinggi kanvas agar elemen tidak berserakan */
+    height: 600px;
     position: relative;
     background-color: transparent;
     display: flex;
-    align-items: flex-end; /* Menahan dasar foto ke bawah kanvas */
+    align-items: flex-end;
     justify-content: center;
     overflow: visible;
 }
 
-/* FOTO UTAMA */
-.character-img {
-    height: 100%; /* Mengikuti tinggi 600px kanvas */
-    width: auto;
-    object-fit: contain;
-    object-position: bottom center;
-    z-index: 2;
-    position: relative;
-    display: block;
-    filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
-}
-
-/* LAYER VEKTOR LATAR BELAKANG (WATERMARK EFEK) */
+/* LAYER 1: VEKTOR LATAR BELAKANG (Z-Index Rendah, Di Belakang Foto) */
 .bg-vector {
     position: absolute;
     background: transparent;
@@ -241,32 +229,32 @@ html, body {
     box-shadow: none;
     color: #94a3b8;
     z-index: 1;
-    opacity: 0.25; /* Transparan tipis seperti blueprint */
+    opacity: 0.3;
     pointer-events: none;
 }
 
 .vec-title {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 800;
     letter-spacing: 0.8px;
     color: #64748b;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.vec-dashboard { top: 30px; left: -10px; width: 150px; }
-.dash-trend-box { display: flex; flex-direction: column; gap: 6px; }
+.vec-dashboard { top: 20px; left: 10px; width: 140px; }
+.dash-trend-box { display: flex; flex-direction: column; gap: 4px; }
 .dash-metric { display: flex; align-items: baseline; gap: 6px; }
-.dash-num { font-size: 1.1rem; font-weight: 800; color: inherit; }
-.dash-growth { font-size: 0.7rem; font-weight: 700; color: inherit; }
+.dash-num { font-size: 0.9rem; font-weight: 800; color: inherit; }
+.dash-growth { font-size: 0.6rem; font-weight: 700; color: inherit; }
 
 .chart-container {
     position: relative;
     width: 100%;
-    height: 35px;
+    height: 25px;
     background: transparent;
     border-left: 2px solid #cbd5e1;
     border-bottom: 2px solid #cbd5e1;
@@ -274,34 +262,45 @@ html, body {
 
 .dash-svg-chart { width: 100%; height: 100%; overflow: visible; opacity: 0.6; }
 
-.vec-process { top: 20px; right: -20px; width: 150px; }
+.vec-process { top: 20px; right: 10px; width: 140px; }
 .bpmn-diagram { display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-top: 4px; }
 .bpmn-node { display: flex; align-items: center; justify-content: center; }
-.bpmn-start { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #94a3b8; }
-.bpmn-task { padding: 4px 6px; border: 1px solid #94a3b8; border-radius: 4px; font-size: 0.5rem; font-weight: 800; }
-.bpmn-gateway { width: 14px; height: 14px; border: 2px solid #94a3b8; transform: rotate(45deg); }
-.bpmn-end { width: 16px; height: 16px; border-radius: 50%; border: 3px solid #94a3b8; }
-.bpmn-arrow { width: 10px; height: 2px; background: #cbd5e1; position: relative; }
+.bpmn-start { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #94a3b8; }
+.bpmn-task { padding: 2px 4px; border: 1px solid #94a3b8; border-radius: 3px; font-size: 0.45rem; font-weight: 800; }
+.bpmn-gateway { width: 10px; height: 10px; border: 2px solid #94a3b8; transform: rotate(45deg); }
+.bpmn-end { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #94a3b8; }
+.bpmn-arrow { width: 6px; height: 2px; background: #cbd5e1; position: relative; }
 .bpmn-arrow::after { content: ''; position: absolute; right: 0; top: -3px; border: solid #cbd5e1; border-width: 0 2px 2px 0; display: inline-block; padding: 2px; transform: rotate(-45deg); }
 
-.vec-mobile { bottom: 100px; left: -20px; width: 120px; }
-.mobile-interface { display: flex; flex-direction: column; gap: 6px; }
-.app-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
-.app-icon-item { aspect-ratio: 1; border-radius: 4px; background: #cbd5e1; }
-.mobile-bar-sim { height: 4px; width: 100%; background: #cbd5e1; border-radius: 2px; }
+.vec-mobile { bottom: 100px; left: 0px; width: 110px; }
+.mobile-interface { display: flex; flex-direction: column; gap: 4px; }
+.app-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+.app-icon-item { aspect-ratio: 1; border-radius: 3px; background: #cbd5e1; }
+.mobile-bar-sim { height: 3px; width: 100%; background: #cbd5e1; border-radius: 2px; }
 
-.vec-api { bottom: 60px; right: 0px; width: 100px; }
+.vec-api { bottom: 60px; right: 10px; width: 90px; }
 
-/* KARTU MELAYANG */
+/* LAYER 2: FOTO UTAMA (Z-Index 2, Di Tengah) */
+.character-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    object-position: bottom center;
+    z-index: 2;
+    position: relative;
+    filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.08));
+}
+
+/* LAYER 3: KARTU MELAYANG (Z-Index 3, Terluar dan Tidak Menutupi Vektor/Wajah) */
 .floating-card {
     position: absolute;
     background: #ffffff;
-    padding: 16px 20px;
+    padding: 14px 18px;
     border-radius: 16px;
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(226, 232, 240, 0.8);
     z-index: 3;
-    width: 210px;
+    width: 200px;
     transition: transform 0.2s ease;
 }
 
@@ -312,22 +311,22 @@ html, body {
 .card-title-box {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 10px;
+    margin-bottom: 10px;
     font-weight: 800;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-dark);
 }
 
 .card-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 .icon-blue { background-color: #2563eb; }
@@ -336,21 +335,21 @@ html, body {
 
 .floating-card ul { list-style: none; }
 .floating-card ul li {
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     color: var(--text-muted);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
     font-weight: 600;
 }
 .floating-card ul li:last-child { margin-bottom: 0; }
-.floating-card ul li i { color: var(--primary-blue); font-size: 0.75rem; margin-top: 3px; }
+.floating-card ul li i { color: var(--primary-blue); font-size: 0.7rem; margin-top: 3px; }
 
-/* Koordinat Kartu Presisi (Berpatokan pada Kanvas 600px) */
-.card-focus      { top: 50px; right: -30px; }
-.card-experience { bottom: 120px; left: -40px; }
-.card-exploring  { bottom: 30px; right: -30px; }
+/* Koordinat Kartu Presisi (Dilebarkan ke luar agar tidak menabrak elemen lain) */
+.card-focus      { top: 80px; right: 0px; }
+.card-experience { top: 250px; left: -40px; }
+.card-exploring  { bottom: 50px; right: -20px; }
 
 
 /* ===========================
@@ -589,7 +588,7 @@ footer p { margin-bottom: 6px; }
 
     .hero-right {
         height: 500px !important;
-        align-items: center; /* Center on mobile instead of bottom */
+        align-items: center;
     }
 
     .hero-right .bg-vector {
