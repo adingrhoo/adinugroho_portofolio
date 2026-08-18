@@ -572,41 +572,42 @@ footer p { margin-bottom: 6px; }
         min-height: auto !important;
     }
 
-    .hero-left, .hero-right {
+    /* Mengatur urutan elemen di HP menggunakan 'order' */
+    .hero-left {
         max-width: 100% !important;
         width: 100% !important;
         padding-right: 0 !important;
-    }
-
-    .hero-left {
-        padding-bottom: 20px;
+        order: 1 !important; /* Teks utama tampil paling atas */
+        padding-bottom: 10px;
     }
 
     .hero-right {
+        max-width: 100% !important;
+        width: 100% !important;
         height: auto !important;
-        min-height: 450px !important;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
-        margin-top: 20px;
+        order: 2 !important; /* Foto dan kartu tampil setelah teks */
+        margin-top: 10px;
     }
 
-    /* Sembunyikan vektor latar belakang di HP agar tidak menumpuk/kacau */
+    /* Sembunyikan vektor latar belakang di HP agar bersih */
     .hero-right .bg-vector {
         display: none !important;
     }
 
-    /* Foto utama di tengah layar HP */
+    /* Posisikan foto di tengah dengan urutan pertama di dalam hero-right */
     .character-img {
         height: 380px !important;
         width: auto !important;
         position: relative !important;
         z-index: 2;
-        margin: 0 auto;
+        order: 1 !important;
+        margin: 0 auto 20px auto;
     }
 
-    /* Kartu melayang ditata ulang jadi susunan vertikal normal di HP */
+    /* Kartu-kartu skill ditata berderet rapi ke bawah setelah foto */
     .floating-card {
         position: relative !important;
         top: auto !important;
@@ -615,7 +616,8 @@ footer p { margin-bottom: 6px; }
         right: auto !important;
         width: 100% !important;
         max-width: 100% !important;
-        margin: 12px 0 !important;
+        margin: 10px 0 !important;
+        order: 2 !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 }
