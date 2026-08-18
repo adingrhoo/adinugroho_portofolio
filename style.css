@@ -31,13 +31,13 @@ html, body {
 }
 
 /* ===========================
-   HERO SECTION (LAYOUT UTAMA - DIREKATKAN JARAKNYA)
+   HERO SECTION (DESKTOP)
 =========================== */
 .hero-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 85vh; /* Dikurangi dari 100vh agar jarak ke section bawah lebih rapat */
+    min-height: 85vh;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 20px 40px 20px;
@@ -45,7 +45,6 @@ html, body {
     background-color: #ffffff;
 }
 
-/* SISI KIRI (TEKS & NAVIGASI) */
 .hero-left {
     flex: 1;
     max-width: 50%;
@@ -207,12 +206,12 @@ html, body {
 }
 
 /* =========================================================
-   SISI KANAN (VEKTOR LEBIH CERAH & POSISI MOBILE APP DITURUNKAN)
+   SISI KANAN (DESKTOP)
 ========================================================= */
 .hero-right {
     flex: 1;
     max-width: 50%;
-    height: 560px; /* Disesuaikan agar lebih padat */
+    height: 560px;
     position: relative;
     background-color: transparent;
     display: flex;
@@ -221,7 +220,6 @@ html, body {
     overflow: visible;
 }
 
-/* LAYER 1: VEKTOR LATAR BELAKANG (Opacity dinaikkan jadi 0.55 agar lebih cerah) */
 .bg-vector {
     position: absolute;
     background: transparent;
@@ -272,7 +270,6 @@ html, body {
 .bpmn-arrow { width: 6px; height: 2px; background: #94a3b8; position: relative; }
 .bpmn-arrow::after { content: ''; position: absolute; right: 0; top: -3px; border: solid #94a3b8; border-width: 0 2px 2px 0; display: inline-block; padding: 2px; transform: rotate(-45deg); }
 
-/* Vektor Mobile App diturunkan posisinya (bottom dikurangi) agar keluar dari area tangan */
 .vec-mobile { bottom: 40px; left: -10px; width: 110px; }
 .mobile-interface { display: flex; flex-direction: column; gap: 4px; }
 .app-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
@@ -281,7 +278,6 @@ html, body {
 
 .vec-api { bottom: 40px; right: 10px; width: 90px; }
 
-/* LAYER 2: FOTO UTAMA */
 .character-img {
     height: 100%;
     width: auto;
@@ -292,7 +288,6 @@ html, body {
     filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.08));
 }
 
-/* LAYER 3: KARTU MELAYANG */
 .floating-card {
     position: absolute;
     background: #ffffff;
@@ -347,22 +342,21 @@ html, body {
 .floating-card ul li:last-child { margin-bottom: 0; }
 .floating-card ul li i { color: var(--primary-blue); font-size: 0.7rem; margin-top: 3px; }
 
-/* Koordinat Kartu Melayang */
 .card-focus      { top: 70px; right: 0px; }
 .card-experience { top: 220px; left: -40px; }
 .card-exploring  { bottom: 40px; right: -20px; }
 
 
 /* ===========================
-   CONTAINER & CARDS SECTIONS
+   CONTAINER & SECTIONS
 =========================== */
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 50px 20px; /* Dirapatkan jarak atasnya */
+    padding: 50px 20px;
 }
 
-section { margin-bottom: 50px; } /* Dirapatkan jarak antar section */
+section { margin-bottom: 50px; }
 section h2 {
     font-size: 2rem;
     font-weight: 800;
@@ -567,14 +561,15 @@ footer {
 footer p { margin-bottom: 6px; }
 
 /* ==========================================
-   RESPONSIVE DESIGN (TABLET & MOBILE)
+   RESPONSIVE DESIGN (KHUSUS HP / TABLET)
    ========================================== */
 @media (max-width: 1024px) {
     .hero-section {
         flex-direction: column !important;
-        justify-content: center;
-        padding: 40px 20px !important;
+        justify-content: flex-start;
+        padding: 20px 16px !important;
         height: auto !important;
+        min-height: auto !important;
     }
 
     .hero-left, .hero-right {
@@ -584,39 +579,52 @@ footer p { margin-bottom: 6px; }
     }
 
     .hero-left {
-        padding-bottom: 40px;
+        padding-bottom: 20px;
     }
 
     .hero-right {
-        height: 500px !important;
+        height: auto !important;
+        min-height: 450px !important;
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: flex-end;
+        margin-top: 20px;
     }
 
+    /* Sembunyikan vektor latar belakang di HP agar tidak menumpuk/kacau */
     .hero-right .bg-vector {
         display: none !important;
     }
 
+    /* Foto utama di tengah layar HP */
     .character-img {
-        height: 100% !important;
+        height: 380px !important;
+        width: auto !important;
+        position: relative !important;
+        z-index: 2;
+        margin: 0 auto;
     }
 
+    /* Kartu melayang ditata ulang jadi susunan vertikal normal di HP */
     .floating-card {
         position: relative !important;
         top: auto !important;
         bottom: auto !important;
         left: auto !important;
         right: auto !important;
-        width: 90% !important;
-        max-width: 320px !important;
-        margin: 10px auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 12px 0 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 }
 
 @media (max-width: 768px) {
     .top-nav { flex-wrap: wrap; gap: 8px 12px; font-size: 0.8rem; }
     .top-nav .divider { display: none; }
-    .main-title { font-size: 2.5rem; }
-    .sub-title { font-size: 1.8rem; }
+    .main-title { font-size: 2.3rem; }
+    .sub-title { font-size: 1.6rem; }
     .cta-buttons { flex-direction: column; gap: 12px; }
     .btn { width: 100%; justify-content: center; }
     .skills-list { gap: 8px; }
